@@ -21,6 +21,8 @@
 		0081EBE32759607800712125 /* CustomIneractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081EBE22759607800712125 /* CustomIneractiveTransition.swift */; };
 		0081EBE62759711000712125 /* CustomPushTwistAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081EBE52759711000712125 /* CustomPushTwistAnimation.swift */; };
 		0081EBEA2759715200712125 /* CustomTwistNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081EBE92759715200712125 /* CustomTwistNavigationController.swift */; };
+		00973E98276624EC00E8CD41 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 00973E97276624EC00E8CD41 /* Alamofire */; };
+		00973E9B27662AC000E8CD41 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00973E9A27662AC000E8CD41 /* AuthViewController.swift */; };
 		00ACD98F2741500E007212A5 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ACD98E2741500E007212A5 /* Users.swift */; };
 		00ACD99127416815007212A5 /* UserFreindArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ACD99027416815007212A5 /* UserFreindArray.swift */; };
 		00ACD9932742F1BF007212A5 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ACD9922742F1BF007212A5 /* Groups.swift */; };
@@ -35,12 +37,17 @@
 		00C19E672736CBEB00C20BBB /* FriendsPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C19E662736CBEB00C20BBB /* FriendsPhotoViewController.swift */; };
 		00C19E692736CC2500C20BBB /* FriendsPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C19E682736CC2500C20BBB /* FriendsPhotoCell.swift */; };
 		00C19E7C273B1B7000C20BBB /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C19E7B273B1B7000C20BBB /* GradientView.swift */; };
+		00C2DFEA2766561C0088783D /* FriendsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2DFE92766561B0088783D /* FriendsAPI.swift */; };
+		00C2DFEE27665FD40088783D /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2DFED27665FD40088783D /* TestViewController.swift */; };
+		00C2DFF3276A9DF60088783D /* PhotosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C2DFF2276A9DF60088783D /* PhotosAPI.swift */; };
 		00C616DB272B38AA00E4976D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C616DA272B38AA00E4976D /* AppDelegate.swift */; };
 		00C616DD272B38AA00E4976D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C616DC272B38AA00E4976D /* SceneDelegate.swift */; };
 		00C616E2272B38AA00E4976D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C616E0272B38AA00E4976D /* Main.storyboard */; };
 		00C616E4272B38B000E4976D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00C616E3272B38B000E4976D /* Assets.xcassets */; };
 		00C616E7272B38B000E4976D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C616E5272B38B000E4976D /* LaunchScreen.storyboard */; };
 		00C616EF272B3C5500E4976D /* LoginFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C616EE272B3C5500E4976D /* LoginFormController.swift */; };
+		00D73A39276BD94300A4EEF3 /* UsersGroupsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D73A38276BD94300A4EEF3 /* UsersGroupsAPI.swift */; };
+		00D73A3B276BE6E800A4EEF3 /* GroupsSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D73A3A276BE6E800A4EEF3 /* GroupsSearchAPI.swift */; };
 		00E3612727629B8E00D30C80 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3612627629B8E00D30C80 /* Session.swift */; };
 		00E3612927629DE900D30C80 /* CustomPopTwistAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3612827629DE900D30C80 /* CustomPopTwistAnimation.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +67,7 @@
 		0081EBE22759607800712125 /* CustomIneractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIneractiveTransition.swift; sourceTree = "<group>"; };
 		0081EBE52759711000712125 /* CustomPushTwistAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPushTwistAnimation.swift; sourceTree = "<group>"; };
 		0081EBE92759715200712125 /* CustomTwistNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTwistNavigationController.swift; sourceTree = "<group>"; };
+		00973E9A27662AC000E8CD41 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		00ACD98E2741500E007212A5 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		00ACD99027416815007212A5 /* UserFreindArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFreindArray.swift; sourceTree = "<group>"; };
 		00ACD9922742F1BF007212A5 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
@@ -74,6 +82,9 @@
 		00C19E662736CBEB00C20BBB /* FriendsPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPhotoViewController.swift; sourceTree = "<group>"; };
 		00C19E682736CC2500C20BBB /* FriendsPhotoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPhotoCell.swift; sourceTree = "<group>"; };
 		00C19E7B273B1B7000C20BBB /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		00C2DFE92766561B0088783D /* FriendsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsAPI.swift; sourceTree = "<group>"; };
+		00C2DFED27665FD40088783D /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		00C2DFF2276A9DF60088783D /* PhotosAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAPI.swift; sourceTree = "<group>"; };
 		00C616D7272B38AA00E4976D /* VK_ШмондрикКонстантин.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VK_ШмондрикКонстантин.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00C616DA272B38AA00E4976D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00C616DC272B38AA00E4976D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +93,8 @@
 		00C616E6272B38B000E4976D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00C616E8272B38B000E4976D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00C616EE272B3C5500E4976D /* LoginFormController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormController.swift; sourceTree = "<group>"; };
+		00D73A38276BD94300A4EEF3 /* UsersGroupsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGroupsAPI.swift; sourceTree = "<group>"; };
+		00D73A3A276BE6E800A4EEF3 /* GroupsSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsSearchAPI.swift; sourceTree = "<group>"; };
 		00E3612627629B8E00D30C80 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		00E3612827629DE900D30C80 /* CustomPopTwistAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopTwistAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00973E98276624EC00E8CD41 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +174,15 @@
 			path = CustomTwistAnimation;
 			sourceTree = "<group>";
 		};
+		00973E9927662A5B00E8CD41 /* VK-API */ = {
+			isa = PBXGroup;
+			children = (
+				00C2DFEF276A808D0088783D /* Modules */,
+				00C2DFED27665FD40088783D /* TestViewController.swift */,
+			);
+			path = "VK-API";
+			sourceTree = "<group>";
+		};
 		00ACD98D27414FE2007212A5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -218,6 +241,30 @@
 			path = MyCustomView;
 			sourceTree = "<group>";
 		};
+		00C2DFEF276A808D0088783D /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				00C2DFF1276A80C10088783D /* Friends */,
+				00C2DFF0276A80A30088783D /* Auth */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		00C2DFF0276A80A30088783D /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				00973E9A27662AC000E8CD41 /* AuthViewController.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		00C2DFF1276A80C10088783D /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
 		00C616CE272B38AA00E4976D = {
 			isa = PBXGroup;
 			children = (
@@ -237,9 +284,10 @@
 		00C616D9272B38AA00E4976D /* 1l_ШмондрикКонстантин */ = {
 			isa = PBXGroup;
 			children = (
+				00973E9927662A5B00E8CD41 /* VK-API */,
 				003521F52764EB9A00B14ED8 /* CustomsAnimations */,
 				003521F32764EA1000B14ED8 /* App */,
-				00E3612527629B0C00D30C80 /* Session */,
+				00E3612527629B0C00D30C80 /* Servises */,
 				00ACD98D27414FE2007212A5 /* Model */,
 				00C19E7A273B1B5300C20BBB /* MyCustomView */,
 				00C19E652736CAF700C20BBB /* FriendsPhoto */,
@@ -253,12 +301,16 @@
 			path = "1l_ШмондрикКонстантин";
 			sourceTree = "<group>";
 		};
-		00E3612527629B0C00D30C80 /* Session */ = {
+		00E3612527629B0C00D30C80 /* Servises */ = {
 			isa = PBXGroup;
 			children = (
 				00E3612627629B8E00D30C80 /* Session.swift */,
+				00C2DFE92766561B0088783D /* FriendsAPI.swift */,
+				00C2DFF2276A9DF60088783D /* PhotosAPI.swift */,
+				00D73A38276BD94300A4EEF3 /* UsersGroupsAPI.swift */,
+				00D73A3A276BE6E800A4EEF3 /* GroupsSearchAPI.swift */,
 			);
-			path = Session;
+			path = Servises;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +329,9 @@
 			dependencies = (
 			);
 			name = "VK_ШмондрикКонстантин";
+			packageProductDependencies = (
+				00973E97276624EC00E8CD41 /* Alamofire */,
+			);
 			productName = "1l_ШмондрикКонстантин";
 			productReference = 00C616D7272B38AA00E4976D /* VK_ШмондрикКонстантин.app */;
 			productType = "com.apple.product-type.application";
@@ -305,6 +360,9 @@
 				Base,
 			);
 			mainGroup = 00C616CE272B38AA00E4976D;
+			packageReferences = (
+				00973E96276624EC00E8CD41 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 00C616D8272B38AA00E4976D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -334,10 +392,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C2DFEE27665FD40088783D /* TestViewController.swift in Sources */,
 				00ACD99127416815007212A5 /* UserFreindArray.swift in Sources */,
 				00C616EF272B3C5500E4976D /* LoginFormController.swift in Sources */,
 				00C19E62273582B600C20BBB /* MyFriendsController.swift in Sources */,
 				00C19E7C273B1B7000C20BBB /* GradientView.swift in Sources */,
+				00973E9B27662AC000E8CD41 /* AuthViewController.swift in Sources */,
 				00C19E5D273569AF00C20BBB /* MyGroupsController.swift in Sources */,
 				0011CC51274933BB007D5467 /* LoadingViewController.swift in Sources */,
 				0011CC54274A9C91007D5467 /* MyNewsTableViewController.swift in Sources */,
@@ -346,6 +406,8 @@
 				0081EBDA2754025E00712125 /* FriendsPhotoSecondViewController.swift in Sources */,
 				0081EBAE274C276000712125 /* NewsFooterView.swift in Sources */,
 				0081EBDD27580B1F00712125 /* CustomPushAnimator.swift in Sources */,
+				00C2DFF3276A9DF60088783D /* PhotosAPI.swift in Sources */,
+				00D73A39276BD94300A4EEF3 /* UsersGroupsAPI.swift in Sources */,
 				00ACD9972745A177007212A5 /* Dictionaris.swift in Sources */,
 				00C616DB272B38AA00E4976D /* AppDelegate.swift in Sources */,
 				0081EBE12758206300712125 /* CustomNavigationController.swift in Sources */,
@@ -364,7 +426,9 @@
 				00C19E672736CBEB00C20BBB /* FriendsPhotoViewController.swift in Sources */,
 				00E3612927629DE900D30C80 /* CustomPopTwistAnimation.swift in Sources */,
 				0081EBDF27581C8000712125 /* CustomPopAnimator.swift in Sources */,
+				00C2DFEA2766561C0088783D /* FriendsAPI.swift in Sources */,
 				00C19E5827354B3300C20BBB /* AvailableGroupsController.swift in Sources */,
+				00D73A3B276BE6E800A4EEF3 /* GroupsSearchAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +648,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00973E96276624EC00E8CD41 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		00973E97276624EC00E8CD41 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00973E96276624EC00E8CD41 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 00C616CF272B38AA00E4976D /* Project object */;
 }
