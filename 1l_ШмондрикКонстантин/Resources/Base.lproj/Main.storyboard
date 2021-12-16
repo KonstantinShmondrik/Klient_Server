@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kqU-xn-S34">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -12,8 +12,8 @@
         <!--LoginFormController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="LoginFormController" customClass="LoginFormController" customModule="_l_ШмондрикКонстантин" customModuleProvider="target" propertyAccessControl="none" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GradientView" customModule="_l_ШмондрикКонстантин" customModuleProvider="target">
+                <viewController id="BYZ-38-t0r" userLabel="LoginFormController" customClass="LoginFormController" customModule="VK_ШмондрикКонстантин" customModuleProvider="target" propertyAccessControl="none" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="GradientView" customModule="VK_ШмондрикКонстантин" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -156,7 +156,7 @@
         <!--Доступные группы-->
         <scene sceneID="Kwm-U8-IJl">
             <objects>
-                <tableViewController id="KlK-E7-LKj" customClass="AvailableGroupsController" customModule="_l_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="KlK-E7-LKj" customClass="AvailableGroupsController" customModule="VK_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="505-qf-NuR">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -167,7 +167,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="78" id="xNn-eP-yP0" customClass="AvailableGroupsCell" customModule="_l_ШмондрикКонстантин" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroupCell" rowHeight="78" id="xNn-eP-yP0" customClass="AvailableGroupsCell" customModule="VK_ШмондрикКонстантин" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88.666666030883789" width="390" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xNn-eP-yP0" id="jP7-V1-XEQ">
@@ -229,13 +229,13 @@
         <!--Мои группы-->
         <scene sceneID="ada-Pa-rpo">
             <objects>
-                <tableViewController id="gLk-NA-CSh" customClass="MyGroupsController" customModule="_l_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="gLk-NA-CSh" customClass="MyGroupsController" customModule="VK_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="n1W-nW-5Oq">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGroupCell" rowHeight="78" id="TZB-rr-ZiR" customClass="MyGroupCell" customModule="_l_ШмондрикКонстантин" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyGroupCell" rowHeight="78" id="TZB-rr-ZiR" customClass="MyGroupCell" customModule="VK_ШмондрикКонстантин" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TZB-rr-ZiR" id="u4z-iC-L9c">
@@ -301,7 +301,7 @@
         <!--Друзья-->
         <scene sceneID="PcB-Qu-kWz">
             <objects>
-                <tableViewController id="HwX-os-Ubn" customClass="MyFriendsController" customModule="_l_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="HwX-os-Ubn" customClass="MyFriendsController" customModule="VK_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ave-tQ-X8A">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -310,7 +310,7 @@
                         <color key="sectionIndexColor" systemColor="systemBlueColor"/>
                         <color key="sectionIndexBackgroundColor" systemColor="systemBlueColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="MyFriendCell" rowHeight="78" translatesAutoresizingMaskIntoConstraints="NO" id="z1M-mr-XdB" customClass="MyFriendsCell" customModule="_l_ШмондрикКонстантин" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="MyFriendCell" rowHeight="78" translatesAutoresizingMaskIntoConstraints="NO" id="z1M-mr-XdB" customClass="MyFriendsCell" customModule="VK_ШмондрикКонстантин" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z1M-mr-XdB" id="MU8-YB-TTE">
@@ -370,12 +370,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zM2-Bk-Sei" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-498.46153846153845" y="-795.4976303317535"/>
+            <point key="canvasLocation" x="430.76923076923077" y="-795.4976303317535"/>
         </scene>
         <!--Фото-->
         <scene sceneID="uMu-Lp-44R">
             <objects>
-                <viewController id="geq-6V-D5d" customClass="FriendsPhotoSecondViewController" customModule="_l_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="geq-6V-D5d" customClass="FriendsPhotoSecondViewController" customModule="VK_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bbe-6z-GrU">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -403,12 +403,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NpQ-Ag-ypX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="427.69230769230768" y="-795.4976303317535"/>
+            <point key="canvasLocation" x="1356.9230769230769" y="-795.4976303317535"/>
         </scene>
         <!--Фото-->
         <scene sceneID="jU6-LE-KsK">
             <objects>
-                <collectionViewController id="ch8-DU-6yO" customClass="FriendsPhotoViewController" customModule="_l_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="ch8-DU-6yO" customClass="FriendsPhotoViewController" customModule="VK_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="9Ra-qg-4m5">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -420,7 +420,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendsPhotoSell" id="Xqr-82-oQf" customClass="FriendsPhotoCell" customModule="_l_ШмондрикКонстантин" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendsPhotoSell" id="Xqr-82-oQf" customClass="FriendsPhotoCell" customModule="VK_ШмондрикКонстантин" customModuleProvider="target">
                                 <rect key="frame" x="95" y="0.0" width="200" height="241"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="hr1-gf-epc">
@@ -473,12 +473,77 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PlC-Fm-c9k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1211" y="-1473"/>
+            <point key="canvasLocation" x="2140" y="-1473.6966824644549"/>
+        </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="EZ5-Jr-ypc">
+            <objects>
+                <viewController id="Enq-lq-f2o" customClass="AuthViewController" customModule="VK_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6cY-P0-YD0">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dfE-X4-d53">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dYH-ls-TFI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dfE-X4-d53" firstAttribute="leading" secondItem="dYH-ls-TFI" secondAttribute="leading" id="0rm-q7-Oj0"/>
+                            <constraint firstItem="dfE-X4-d53" firstAttribute="top" secondItem="6cY-P0-YD0" secondAttribute="top" id="CsF-Zv-BZy"/>
+                            <constraint firstItem="dfE-X4-d53" firstAttribute="trailing" secondItem="dYH-ls-TFI" secondAttribute="trailing" id="HMC-jG-ipN"/>
+                            <constraint firstAttribute="bottom" secondItem="dfE-X4-d53" secondAttribute="bottom" id="jHf-y8-eQV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="yoJ-0w-Joz"/>
+                    <connections>
+                        <outlet property="webView" destination="dfE-X4-d53" id="28e-cG-4HN"/>
+                        <segue destination="qiA-gD-bQr" kind="show" identifier="showFriendsSegue" id="KiY-l1-Bph"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bds-8B-m7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2163.0769230769229" y="-924.17061611374402"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="hlz-eb-o4f">
+            <objects>
+                <tableViewController id="qiA-gD-bQr" customClass="TestViewController" customModule="VK_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="LQo-hH-gRN">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="l4U-Sp-NSK">
+                                <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l4U-Sp-NSK" id="MX6-QM-NJL">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qiA-gD-bQr" id="Hzw-9V-hdf"/>
+                            <outlet property="delegate" destination="qiA-gD-bQr" id="Ufh-Dr-R6b"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Diq-a8-cow"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qLe-TV-chw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1038" y="-1338"/>
         </scene>
         <!--Друзья-->
         <scene sceneID="DgD-dO-7UT">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1MM-Dg-BEs" customClass="CustomTwistNavigationController" customModule="_l_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1MM-Dg-BEs" customClass="CustomTwistNavigationController" customModule="VK_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Друзья" image="person.fill" catalog="system" id="j96-o4-Cg1"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="eaZ-lG-d7Y"/>
@@ -493,12 +558,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1s2-4H-FmN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1429" y="-795"/>
+            <point key="canvasLocation" x="-500" y="-795.4976303317535"/>
         </scene>
         <!--Группы-->
         <scene sceneID="CfA-Qi-7n1">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5PJ-WA-SPf" customClass="CustomTwistNavigationController" customModule="_l_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5PJ-WA-SPf" customClass="CustomTwistNavigationController" customModule="VK_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Группы" image="person.3.fill" catalog="system" id="cdu-NB-4Zf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="B6w-AO-8U7">
@@ -517,13 +582,13 @@
         <!--Новости-->
         <scene sceneID="J1J-Rx-ZJ8">
             <objects>
-                <tableViewController id="42t-Am-iLe" customClass="MyNewsTableViewController" customModule="_l_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="42t-Am-iLe" customClass="MyNewsTableViewController" customModule="VK_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="bis-Yb-p1t">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyNewsTableViewCell" rowHeight="100" id="xyU-2G-Uk8" customClass="MyNewsTableViewCell" customModule="_l_ШмондрикКонстантин" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MyNewsTableViewCell" rowHeight="100" id="xyU-2G-Uk8" customClass="MyNewsTableViewCell" customModule="VK_ШмондрикКонстантин" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="NewsCell" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xyU-2G-Uk8" id="J50-99-rZN">
@@ -574,7 +639,7 @@
         <!--Loading View Controller-->
         <scene sceneID="eD3-LF-84G">
             <objects>
-                <viewController id="yxi-UW-lhb" customClass="LoadingViewController" customModule="_l_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="yxi-UW-lhb" customClass="LoadingViewController" customModule="VK_ШмондрикКонстантин" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1zw-CF-LQj">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -659,6 +724,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOC-uH-Kb2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1429.2307692307693" y="589.33649289099526"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="naI-Fo-u0j">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kqU-xn-S34" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cN9-0V-SL2">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Enq-lq-f2o" kind="relationship" relationship="rootViewController" id="s0p-8R-hdi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5hb-Cn-HvM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3092.3076923076924" y="-924.17061611374402"/>
         </scene>
     </scenes>
     <resources>

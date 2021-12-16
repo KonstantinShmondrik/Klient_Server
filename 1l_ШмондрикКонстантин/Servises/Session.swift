@@ -6,13 +6,13 @@
 //
 
 import Foundation
-import UIKit
+
 // Хранение данных о текущей сессии
 class Session {
-    static let instance = Session()
+    static let shared = Session()
     
     private init() {}
     
-    var token: String = ""                  // токен в VK
-    var userId: Int = 0                     // ID пользователя
+    var token = ""                  // токен в VK
+    var userId = ""                 // ID пользователя
 }
