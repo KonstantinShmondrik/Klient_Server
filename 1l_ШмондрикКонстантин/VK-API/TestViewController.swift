@@ -15,8 +15,8 @@ class TestViewController: UITableViewController {
    private var friendsAPI = FriendsAPI()
    private var friends: [Friend] = []
     
-    private var photosAPI = PhotosAPI()
-    private var photos: [Photos] = []
+//    private var photosAPI = PhotosAPI()
+//    private var photos: [Photos] = []
     
     private var usersGroupAPI = UsersGroupsAPI()
     private var usersGroup: [UsersGroups] = []
@@ -39,13 +39,13 @@ class TestViewController: UITableViewController {
         }
 // MARK: - вызов фотографий пользователя
         
-        photosAPI.getPhotos { [weak self] photos in
-            guard let self = self else {return}
-            self.photos = photos
-           
-            self.tableView.reloadData()
-        }
-        
+//        photosAPI.getPhotos (album_id: photosAPI.albumIdSaved) { [weak self] photos in
+//            guard let self = self else {return}
+//            self.photos = photos
+//           
+//            self.tableView.reloadData()
+//        }
+//        
     
     
 // MARK: - вызов групп пользователя

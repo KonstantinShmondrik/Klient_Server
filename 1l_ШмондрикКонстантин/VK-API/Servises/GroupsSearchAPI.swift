@@ -45,7 +45,8 @@ final class GroupsSearchAPI {
         AF.request(url, method: .get, parameters: parameters).responseJSON {response in
            
             print("получение групп по поисковому запросу")
-            print( response.result)
+//            print( response.result)
+            print(response.data?.prettyJSON)
         }
     }
 }

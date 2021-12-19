@@ -9,9 +9,9 @@
 import Foundation
 import Alamofire
 
-struct Photos {                     // Структура заглушка, потом создам отдельный файл с классом
-    var photo = ""
-}
+//struct Photos {                     // Структура заглушка, потом создам отдельный файл с классом
+//    var photo = ""
+//}
 
 final class PhotosAPI {
     
@@ -25,14 +25,14 @@ final class PhotosAPI {
     let version = "5.131"
    
     
-    func getPhotos(completion: @escaping([Photos])->()) {
+    func getPhotos(album_id: String, completion: @escaping([Photos])->()) {
 
-        completion([Photos()])
+//        completion([Photos()])
                     
         let method = "/photos.get"
         let parameters: [String : String] = [
             "owner_id": userId,
-            "album_id": albumIdSaved,
+            "album_id": album_id,
 //            "photo_ids": "photo",
             "rev": "0",
             "count": "5",
@@ -45,7 +45,19 @@ final class PhotosAPI {
         
         AF.request(url, method: .get, parameters: parameters).responseJSON {response in
             print("вызов фотографий пользователя")
-            print(response.result)
+            //            print(response.result)
+            print(response.data?.prettyJSON)
+            
+            guard let jsonData = response.data else { return }
+            
+            do {
+                let photoContainer = try JSONDecoder().decode(PhotoContainer.self, from: jsonData)
+                let photos = photoContainer.response.items
+                
+                completion(photos)
+            } catch {
+                print(error)
+            }
         }
     }
 }
