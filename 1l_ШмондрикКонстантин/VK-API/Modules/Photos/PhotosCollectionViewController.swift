@@ -1,0 +1,62 @@
+//
+//  PhotosCollectionViewController.swift
+//  VK_ШмондрикКонстантин
+//
+//  Created by Константин Шмондрик on 19.12.2021.
+//
+
+import UIKit
+import SDWebImage
+
+
+final class PhotosCollectionViewController: UICollectionViewController {
+    
+//    private var photosAPI = PhotosAPI()
+//    private var photos: [Photos] = []
+    
+    private var allPhotosAPI = AllPhotosAPI()
+    private var allPhotos: [AllPhotos] = []
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        allPhotosAPI.getPhotosAll { [weak self] allPhotos in
+            guard let self = self else {return}
+            self.allPhotos = allPhotos
+            self.collectionView.reloadData()
+        }
+        
+        
+        
+    }
+
+   
+
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return allPhotos.count
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoSell", for: indexPath) as? PhotosCollectionViewCell else {return UICollectionViewCell()}
+    
+       let photo: Size2 = allPhotos[indexPath.section].sizes[indexPath.row]
+       
+
+        let photoURL = photo.url
+        if let url = URL(string: photoURL) {
+
+            cell.photos.sd_setImage(with: url)
+        }
+   
+        return cell
+    }
+
+   
+}

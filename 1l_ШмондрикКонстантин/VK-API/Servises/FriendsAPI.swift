@@ -10,12 +10,6 @@
 import Foundation
 import Alamofire
 
-struct Friend {                     // Структура заглушка, потом создам отдельный файл с классом
-    var name = ""
-}
-
-
-
 final class FriendsAPI {
     
     let baseUrl = "https://api.vk.com/method"
@@ -25,15 +19,13 @@ final class FriendsAPI {
    
     
     func getFriends(completion: @escaping([Friend])->()) {
-
-        completion([Friend()])
                     
         let method = "/friends.get"
-        let parameters: [String : String] = [
+        let parameters: [String: String] = [
             "user_id": userId,
             "order": "name",
-            "fields": "photo_50, photo_100, city, domain",
-            "count": "5",
+            "count": "50",
+            "fields": "photo_100, photo_50, city, domain",
             "access_token": accessToken,
             "v": version
         ]
@@ -42,7 +34,20 @@ final class FriendsAPI {
         
         AF.request(url, method: .get, parameters: parameters).responseJSON {response in
             print("вызов списка друзей")
-            print(response.result)
+//            print(response.result)
+            print(response.data?.prettyJSON)
+            
+            guard let jsonData = response.data else { return }
+            
+            do {
+                let friendsContainer = try JSONDecoder().decode(FriendsContainer.self, from: jsonData)
+                
+                let friends = friendsContainer.response.items
+                
+                completion(friends)
+            } catch {
+                print(error)
+            }
         }
     }
 }
