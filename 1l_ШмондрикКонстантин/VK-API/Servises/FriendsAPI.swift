@@ -9,6 +9,8 @@
 
 import Foundation
 import Alamofire
+import RealmSwift
+import SwiftyJSON
 
 final class FriendsAPI {
     
@@ -50,6 +52,82 @@ final class FriendsAPI {
             }
         }
     }
+    // MARK: - DAO
+    func getFriends2(completion: @escaping([FriendDAO])->()) {
+                    
+        let method = "/friends.get"
+        let parameters: [String: String] = [
+            "user_id": userId,
+            "order": "name",
+            "count": "50",
+            "fields": "photo_100, photo_50, domain",  // city,
+            "access_token": accessToken,
+            "v": version
+        ]
+            
+        let url = baseUrl + method
+        
+        AF.request(url, method: .get, parameters: parameters).responseJSON {response in
+            print("вызов списка друзей")
+            print(response.data?.prettyJSON)
+            
+            guard let jsonData = response.data else { return }
+            
+            do {
+                let itemsData = try JSON(jsonData)["response"]["items"].rawData()
+                let friends = try JSONDecoder().decode([FriendDAO].self, from: itemsData)
+                
+            self.saveFriensdData(friends)
+                
+                completion(friends)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    // MARK: - DTO
+    func getFriends3(completion: @escaping([FriendDTO])->()) {
+                    
+        let method = "/friends.get"
+        let parameters: [String: String] = [
+            "user_id": userId,
+            "order": "name",
+            "count": "50",
+            "fields": "photo_100, photo_50, city, domain",
+            "access_token": accessToken,
+            "v": version
+        ]
+            
+        let url = baseUrl + method
+        
+        AF.request(url, method: .get, parameters: parameters).responseJSON {response in
+            print("вызов списка друзей")
+            print(response.data?.prettyJSON)
+            
+            guard let jsonData = response.data else { return }
+            
+            do {
+                let itemsData = try JSON(jsonData)["response"]["items"].rawData()
+                let friends = try JSONDecoder().decode([FriendDTO].self, from: itemsData)
+                completion(friends)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    // MARK: - saveFriensdData
+    func saveFriensdData (_ friends: [FriendDAO]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(friends)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
 }
+
 
 
