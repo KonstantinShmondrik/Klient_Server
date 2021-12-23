@@ -45,16 +45,14 @@ final class PhotosCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoSell", for: indexPath) as? PhotosCollectionViewCell else {return UICollectionViewCell()}
-    
-       let photo: Size2 = allPhotos[indexPath.section].sizes[indexPath.row]
-       
 
-        let photoURL = photo.url
-        if let url = URL(string: photoURL) {
+        let photo = allPhotos[indexPath.item]
+        guard let photoURL = photo.sizes.last?.url else { return UICollectionViewCell() }
+        if let url = URL.init(string: photoURL) {
 
             cell.photos.sd_setImage(with: url)
         }
-   
+        
         return cell
     }
 

@@ -7,12 +7,13 @@
 
 import UIKit
 import SDWebImage
+import RealmSwift
 
 
 final class FriendsTableViewController: UITableViewController {
     
     private var friendsAPI = FriendsAPI()
-    private var friends: [Friend] = []
+    private var friends: [FriendDAO] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +22,7 @@ final class FriendsTableViewController: UITableViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell") 
         
 // MARK: -  вызов списка друзей
-        friendsAPI.getFriends { [weak self] friends in
+        friendsAPI.getFriends2 { [weak self] friends in
             guard let self = self else {return}
             self.friends = friends
             
@@ -47,7 +48,7 @@ final class FriendsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let friend: Friend = friends[indexPath.row]
+        let friend: FriendDAO = friends[indexPath.row]
         cell.textLabel?.text = "\(friend.firstName) \(friend.lastName)"
         
         if let url = URL(string: friend.photo100) {

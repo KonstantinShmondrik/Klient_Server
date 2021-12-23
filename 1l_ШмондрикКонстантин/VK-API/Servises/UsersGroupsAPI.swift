@@ -9,6 +9,8 @@
 
 import Foundation
 import Alamofire
+import RealmSwift
+import SwiftyJSON
 
 
 final class UsersGroupsAPI {
@@ -18,10 +20,8 @@ final class UsersGroupsAPI {
     let userId = Session.shared.userId
     let version = "5.131"
     
-    
+    //    MARK: - DTO
     func getUsersGroups(completion: @escaping([UsersGroups])->()) {
-        
-       
         
         let method = "/groups.get"
         let parameters: [String : String] = [
@@ -54,5 +54,52 @@ final class UsersGroupsAPI {
             }
         }
     }
-}
+    
+//    MARK: - DAO
+    func getUsersGroups2(completion: @escaping([UsersGroupsDAO])->()) {
 
+        let method = "/groups.get"
+        let parameters: [String : String] = [
+            "user_id": userId,
+            "extended": "1",
+            "fields": "activity, can_create_topic, can_post, can_see_all_posts, city, contacts;, counters, country, description, finish_date, fixed_post, links, members_count, place, site, start_date, status, verified, wiki_page",
+            "count": "50",
+            "access_token": accessToken,
+            "v": version
+        ]
+        
+        let url = baseUrl + method
+        
+        AF.request(url, method: .get, parameters: parameters).responseJSON {response in
+            
+            print("вызов групп пользователя")
+            //            print( response.result)
+            print(response.data?.prettyJSON)
+            
+            guard let jsonData = response.data else { return }
+            
+            do {
+                let itemsData = try JSON(jsonData)["response"]["items"].rawData()
+                let groups = try JSONDecoder().decode([UsersGroupsDAO].self, from: itemsData)
+                
+                self.saveUsersGroupsData(groups)
+                
+                completion(groups)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    // MARK: - saveUsersGroupsData
+    func saveUsersGroupsData (_ groups: [UsersGroupsDAO]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(groups)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+}

@@ -10,6 +10,8 @@
 
 import Foundation
 import Alamofire
+import RealmSwift
+import SwiftyJSON
 
 
 final class AllPhotosAPI {
@@ -20,10 +22,8 @@ final class AllPhotosAPI {
     let userId = Session.shared.userId
     let version = "5.131"
    
-    
+    // MARK: - DTO
     func getPhotosAll(completion: @escaping([AllPhotos])->()) {
-
-//        completion([AllPhotos()])
                     
         let method = "/photos.getAll"
         let parameters: [String : String] = [
@@ -56,4 +56,53 @@ final class AllPhotosAPI {
             }
         }
     }
+    /* MARK: - Функция пока закоменчена, ломает проект. Надо что-то поменять в DAO модели
+    // MARK: - DAO
+    func getPhotosAll2(completion: @escaping([AllPhotosDAO])->()) {
+                    
+        let method = "/photos.getAll"
+        let parameters: [String : String] = [
+            "owner_id": userId,
+            "count": "5",
+//            "extended": "1",
+//            "photo_sizes": "1",
+//            "no_service_albums": "1",
+            "access_token": accessToken,
+            "v": version
+        ]
+            
+        let url = baseUrl + method
+        
+        AF.request(url, method: .get, parameters: parameters).responseJSON {response in
+            print("вызов всех фотографий пользователя")
+            //            print(response.result)
+            print(response.data?.prettyJSON)
+            
+            guard let jsonData = response.data else { return }
+            
+            do {
+                let itemsData = try JSON(jsonData)["response"]["items"].rawData()
+                let photos = try JSONDecoder().decode([AllPhotosDAO].self, from: itemsData)
+                
+                self.saveAllPhotosData(photos)
+                
+                completion(photos)
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
+    // MARK: - saveAllPhotosData
+    func saveAllPhotosData (_ photos: [AllPhotosDAO]) {
+        do {
+            let realm = try Realm()
+            realm.beginWrite()
+            realm.add(photos)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+     */
 }

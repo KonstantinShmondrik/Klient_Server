@@ -11,7 +11,7 @@ import SDWebImage
 final class GroupsTableViewController: UITableViewController {
     
     private var usersGroupAPI = UsersGroupsAPI()
-    private var usersGroup: [UsersGroups] = []
+    private var usersGroup: [UsersGroupsDAO] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ final class GroupsTableViewController: UITableViewController {
 
         // MARK: - вызов групп пользователя
         
-        usersGroupAPI.getUsersGroups { [weak self] usersGroup in
+        usersGroupAPI.getUsersGroups2 { [weak self] usersGroup in
             guard let self = self else {return}
             self.usersGroup = usersGroup
             
@@ -47,7 +47,7 @@ final class GroupsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        let group: UsersGroups = usersGroup[indexPath.row]
+        let group: UsersGroupsDAO = usersGroup[indexPath.row]
         cell.textLabel?.text = "\(group.name)"
         
         if let url = URL(string: group.photo100) {
