@@ -60,7 +60,7 @@ final class FriendsAPI {
             "user_id": userId,
             "order": "name",
             "count": "50",
-            "fields": "photo_100, photo_50, domain",  // city,
+            "fields": "photo_100, photo_50, domain, city",
             "access_token": accessToken,
             "v": version
         ]
@@ -76,9 +76,7 @@ final class FriendsAPI {
             do {
                 let itemsData = try JSON(jsonData)["response"]["items"].rawData()
                 let friends = try JSONDecoder().decode([FriendDAO].self, from: itemsData)
-                
-            self.saveFriensdData(friends)
-                
+
                 completion(friends)
             } catch {
                 print(error)
@@ -116,17 +114,7 @@ final class FriendsAPI {
         }
     }
     
-    // MARK: - saveFriensdData
-    func saveFriensdData (_ friends: [FriendDAO]) {
-        do {
-            let realm = try Realm()
-            realm.beginWrite()
-            realm.add(friends)
-            try realm.commitWrite()
-        } catch {
-            print(error)
-        }
-    }
+   
 }
 
 

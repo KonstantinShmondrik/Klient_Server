@@ -82,8 +82,6 @@ final class UsersGroupsAPI {
                 let itemsData = try JSON(jsonData)["response"]["items"].rawData()
                 let groups = try JSONDecoder().decode([UsersGroupsDAO].self, from: itemsData)
                 
-                self.saveUsersGroupsData(groups)
-                
                 completion(groups)
             } catch {
                 print(error)
@@ -91,15 +89,5 @@ final class UsersGroupsAPI {
         }
     }
     
-    // MARK: - saveUsersGroupsData
-    func saveUsersGroupsData (_ groups: [UsersGroupsDAO]) {
-        do {
-            let realm = try Realm()
-            realm.beginWrite()
-            realm.add(groups)
-            try realm.commitWrite()
-        } catch {
-            print(error)
-        }
-    }
+   
 }
