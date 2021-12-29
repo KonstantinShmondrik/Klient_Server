@@ -10,10 +10,7 @@ import SDWebImage
 
 
 final class PhotosCollectionViewController: UICollectionViewController {
-    
-//    private var photosAPI = PhotosAPI()
-//    private var photos: [Photos] = []
-    
+        
     private var allPhotosAPI = AllPhotosAPI()
     private var allPhotos: [AllPhotos] = []
     

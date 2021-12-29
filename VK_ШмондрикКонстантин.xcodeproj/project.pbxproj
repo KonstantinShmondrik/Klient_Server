@@ -178,6 +178,7 @@
 				00C616E3272B38B000E4976D /* Assets.xcassets */,
 				00C616E5272B38B000E4976D /* LaunchScreen.storyboard */,
 				00C616E8272B38B000E4976D /* Info.plist */,
+				00C2DFED27665FD40088783D /* TestViewController.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -216,7 +217,6 @@
 			isa = PBXGroup;
 			children = (
 				00C2DFEF276A808D0088783D /* Modules */,
-				00C2DFED27665FD40088783D /* TestViewController.swift */,
 				00E3612527629B0C00D30C80 /* Servises */,
 				00DC90E4276E3E8D000FAF28 /* Extension */,
 			);

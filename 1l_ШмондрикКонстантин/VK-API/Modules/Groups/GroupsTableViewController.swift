@@ -15,6 +15,7 @@ final class GroupsTableViewController: UITableViewController {
     private var usersGroupAPI = UsersGroupsAPI()
     private var usersGroup: Results<UsersGroupsDAO>?
     private var usersGroupDB = UsersGroupsDB()
+    private var token: NotificationToken?
 
     
     @IBOutlet weak var updateGroupsList: UIButton!
@@ -36,7 +37,27 @@ final class GroupsTableViewController: UITableViewController {
             self.usersGroupDB.saveUsersGroupsData(usersGroup)
             self.usersGroup = self.usersGroupDB.fetchUsersGroupsData()
             
-            self.tableView.reloadData()
+//            self.tableView.reloadData()
+            self.token = self.usersGroup?.observe(on: .main, { [weak self] changes in
+                
+                guard let self = self else { return }
+                
+                switch changes {
+                case .initial:
+                    self.tableView.reloadData()
+                    
+                case .update(_, let deletions, let insertions, let modifications):
+                    self.tableView.beginUpdates()
+                    self.tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+                    self.tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
+                    self.tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+                    self.tableView.endUpdates()
+                    
+                case .error(let error):
+                    print("\(error)")
+                }
+
+            })
         }
         
         
@@ -61,10 +82,13 @@ final class GroupsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         let group = usersGroup?[indexPath.row]
-        cell.textLabel?.text = "\(group!.name)" 
+        cell.textLabel?.text = "\(group?.name ?? "")" 
         
         if let url = URL(string: group?.photo100 ?? "") {
-            cell.imageView?.sd_setImage(with: url, completed: nil)
+
+            cell.imageView?.sd_setImage(with: url, completed: { image, _, _, _ in
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            })
         }
 
         return cell
