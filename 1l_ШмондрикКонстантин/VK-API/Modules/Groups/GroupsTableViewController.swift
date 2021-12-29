@@ -10,23 +10,29 @@ import SDWebImage
 import RealmSwift
 
 final class GroupsTableViewController: UITableViewController {
+   
     
     private var usersGroupAPI = UsersGroupsAPI()
     private var usersGroup: Results<UsersGroupsDAO>?
     private var usersGroupDB = UsersGroupsDB()
 
+    
+    @IBOutlet weak var updateGroupsList: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
        // TODO: - Временное решение, потом завязать на форму из прошлого курса
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell") 
 
+//        self.usersGroupDB.deleteUsersGroupsData(usersGroup!)
+//        self.usersGroupDB.deleteAllUsersGroupsData()
         // MARK: - вызов групп пользователя
-        
         usersGroupAPI.getUsersGroups2 { [weak self] usersGroup in
             guard let self = self else {return}
 //            self.usersGroup = usersGroup
-            self.usersGroupDB.deleteAllUsersGroupsData()
+//            self.usersGroupDB.deleteAllUsersGroupsData()
+            self.usersGroupDB.deleteUsersGroupsData(usersGroup)
             self.usersGroupDB.saveUsersGroupsData(usersGroup)
             self.usersGroup = self.usersGroupDB.fetchUsersGroupsData()
             
@@ -65,5 +71,15 @@ final class GroupsTableViewController: UITableViewController {
     }
     
 
-   
+    @IBAction func updateGroupsList(_ sender: Any) {
+        usersGroupAPI.getUsersGroups2 { [weak self] usersGroup in
+            guard let self = self else {return}
+            self.usersGroupDB.deleteUsersGroupsData(usersGroup)
+            self.usersGroupDB.saveUsersGroupsData(usersGroup)
+            self.usersGroup = self.usersGroupDB.fetchUsersGroupsData()
+            print("данные обновлены")
+            self.tableView.reloadData()
+        }
+    }
+    
 }

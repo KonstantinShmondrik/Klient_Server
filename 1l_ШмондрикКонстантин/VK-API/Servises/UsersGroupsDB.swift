@@ -48,12 +48,14 @@ final class UsersGroupsDB {
         }
         
         // MARK: - deleteUsersGroupsData
-        func deleteFriensdData(_ groups: [UsersGroupsDAO]) {
+        func deleteUsersGroupsData(_ groups: [UsersGroupsDAO]) {
             do {
                 let realm = try Realm()
+                let oldItems = realm.objects(UsersGroupsDAO.self)
                 try realm.write{
-                    realm.delete(groups)
+                    realm.delete(oldItems)
                 }
+                
                 
             } catch {
                 print(error)

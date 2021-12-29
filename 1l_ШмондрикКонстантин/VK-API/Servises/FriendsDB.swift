@@ -16,7 +16,7 @@ final class FriendsDB {
     }
         // MARK: - saveFriensdData
         func saveFriensdData (_ friends: [FriendDAO]) {
-            
+          
             do {
                 
                 let realm = try Realm()
@@ -31,6 +31,13 @@ final class FriendsDB {
             } catch {
                 print(error)
             }
+           
+            
+//            let realm = try! Realm()
+//
+//            try! realm.write {
+//                realm.add(friends)
+//            }
         }
         
         // MARK: - fetchFriensdData
@@ -49,8 +56,9 @@ final class FriendsDB {
         func deleteFriensdData(_ friends: [FriendDAO]) {
             do {
                 let realm = try Realm()
+                let oldItems = realm.objects(FriendDAO.self)
                 try realm.write{
-                    realm.delete(friends)
+                    realm.delete(oldItems)
                 }
                 
             } catch {
@@ -60,6 +68,7 @@ final class FriendsDB {
             
             // MARK: - deleteAllFriensdData
             func deleteAllFriensdData() {
+                
                 do {
                     let realm = try Realm()
                    
@@ -70,6 +79,12 @@ final class FriendsDB {
                 } catch {
                     print(error)
                 }
+                 
+//                let realm = try! Realm()
+//
+//                try! realm.write {
+//                    realm.deleteAll()
+//            }
             }
             
             

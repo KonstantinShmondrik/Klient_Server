@@ -15,6 +15,7 @@ final class FriendsTableViewController: UITableViewController {
     private var friendsAPI = FriendsAPI()
     private var friends: Results<FriendDAO>?
     private var friendsDB = FriendsDB()
+    private var token: NotificationToken?
 
     @IBOutlet weak var updateFriendsList: UIButton!
    
@@ -25,14 +26,19 @@ final class FriendsTableViewController: UITableViewController {
     //TODO: - Временное решение, потом завязать на форму из прошлого курса
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell") 
         
+//        self.friendsDB.deleteFriensdData(friends?)
+//        self.friendsDB.deleteAllFriensdData()
+        
 // MARK: -  вызов списка друзей
         friendsAPI.getFriends2 { [weak self] friends in
             guard let self = self else {return}
-            self.friendsDB.deleteAllFriensdData()
+            self.friendsDB.deleteFriensdData(friends)
+//            self.friendsDB.deleteAllFriensdData()
             self.friendsDB.saveFriensdData(friends)
             self.friends = self.friendsDB.fetchFriensdData()
            
             self.tableView.reloadData()
+           
         }
         
         
@@ -72,7 +78,7 @@ final class FriendsTableViewController: UITableViewController {
         
         friendsAPI.getFriends2 { [weak self] friends in
             guard let self = self else {return}
-            self.friendsDB.deleteAllFriensdData()
+            self.friendsDB.deleteFriensdData(friends)
             self.friendsDB.saveFriensdData(friends)
             self.friends = self.friendsDB.fetchFriensdData()
            print("данные обновлены")
