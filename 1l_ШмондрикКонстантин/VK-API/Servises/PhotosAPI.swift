@@ -19,7 +19,7 @@ final class PhotosAPI {
     let accessToken = Session.shared.token
     let ownerId = "-" + Session.shared.userId // что это за параметр и как его использовать?
     let userId = Session.shared.userId
-    let albumIdWall = "wall"            //albumId можно сделать входным параметром функцию, но как?
+    let albumIdWall = "wall"            
     let albumIdProfile = "profile"
     let albumIdSaved = "saved"
     let version = "5.131"

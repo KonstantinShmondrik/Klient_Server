@@ -37,7 +37,27 @@ final class FriendsTableViewController: UITableViewController {
             self.friendsDB.saveFriensdData(friends)
             self.friends = self.friendsDB.fetchFriensdData()
            
-            self.tableView.reloadData()
+//            self.tableView.reloadData()
+            self.token = self.friends?.observe(on: .main, { [weak self] changes in
+                
+                guard let self = self else { return }
+                
+                switch changes {
+                case .initial:
+                    self.tableView.reloadData()
+                    
+                case .update(_, let deletions, let insertions, let modifications):
+                    self.tableView.beginUpdates()
+                    self.tableView.insertRows(at: insertions.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+                    self.tableView.deleteRows(at: deletions.map({ IndexPath(row: $0, section: 0)}), with: .automatic)
+                    self.tableView.reloadRows(at: modifications.map({ IndexPath(row: $0, section: 0) }), with: .automatic)
+                    self.tableView.endUpdates()
+                    
+                case .error(let error):
+                    print("\(error)")
+                }
+
+            })
            
         }
         
@@ -64,10 +84,13 @@ final class FriendsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         let friend = friends?[indexPath.row]
-        cell.textLabel?.text = "\(friend!.firstName) \(friend!.lastName)"
+        cell.textLabel?.text = "\(friend?.firstName ?? "") \(friend?.lastName ?? "")"
         
         if let url = URL(string: friend?.photo100 ?? "") {
-            cell.imageView?.sd_setImage(with: url, completed: nil)
+
+            cell.imageView?.sd_setImage(with: url, completed: { image, _, _, _ in
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            })
         }
 
         return cell
