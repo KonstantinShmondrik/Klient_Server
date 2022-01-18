@@ -11,6 +11,11 @@
 		0011CC54274A9C91007D5467 /* MyNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011CC53274A9C91007D5467 /* MyNewsTableViewController.swift */; };
 		0011CC56274A9CD9007D5467 /* MyNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011CC55274A9CD9007D5467 /* MyNewsTableViewCell.swift */; };
 		0029541A277B6890007EAF75 /* UsersGroupsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00295419277B6890007EAF75 /* UsersGroupsDB.swift */; };
+		006154A527942B42004E36BD /* FirebaseFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006154A427942B42004E36BD /* FirebaseFriend.swift */; };
+		00741A08279333FA009861DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00741A07279333FA009861DB /* GoogleService-Info.plist */; };
+		00741A0B2793367B009861DB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 00741A0A2793367B009861DB /* FirebaseAuth */; };
+		00741A0D2793367B009861DB /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 00741A0C2793367B009861DB /* FirebaseDatabase */; };
+		00741A0F27934819009861DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00741A0E27934819009861DB /* LoginViewController.swift */; };
 		0081EBAE274C276000712125 /* NewsFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081EBAD274C276000712125 /* NewsFooterView.swift */; };
 		0081EBB0274C27EF00712125 /* NewsFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0081EBAF274C27EF00712125 /* NewsFooterView.xib */; };
 		0081EBB32750107C00712125 /* NewsHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081EBB12750107C00712125 /* NewsHeaderViewCell.swift */; };
@@ -22,6 +27,11 @@
 		0081EBE32759607800712125 /* CustomIneractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081EBE22759607800712125 /* CustomIneractiveTransition.swift */; };
 		0081EBE62759711000712125 /* CustomPushTwistAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081EBE52759711000712125 /* CustomPushTwistAnimation.swift */; };
 		0081EBEA2759715200712125 /* CustomTwistNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0081EBE92759715200712125 /* CustomTwistNavigationController.swift */; };
+		008E581227874E0000074464 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008E581127874E0000074464 /* FriendsTableViewCell.swift */; };
+		008E5814278770AD00074464 /* GroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008E5813278770AD00074464 /* GroupsTableViewCell.swift */; };
+		008E581627888FDD00074464 /* FriendsPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008E581527888FDD00074464 /* FriendsPhotosCollectionViewCell.swift */; };
+		008E58182788902400074464 /* FriendsPhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008E58172788902400074464 /* FriendsPhotosCollectionViewController.swift */; };
+		008E581A278E372400074464 /* TestInternetConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008E5819278E372400074464 /* TestInternetConnection.swift */; };
 		00973E98276624EC00E8CD41 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 00973E97276624EC00E8CD41 /* Alamofire */; };
 		00973E9B27662AC000E8CD41 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00973E9A27662AC000E8CD41 /* AuthViewController.swift */; };
 		00ACD98F2741500E007212A5 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ACD98E2741500E007212A5 /* Users.swift */; };
@@ -76,6 +86,9 @@
 		0011CC53274A9C91007D5467 /* MyNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNewsTableViewController.swift; sourceTree = "<group>"; };
 		0011CC55274A9CD9007D5467 /* MyNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNewsTableViewCell.swift; sourceTree = "<group>"; };
 		00295419277B6890007EAF75 /* UsersGroupsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGroupsDB.swift; sourceTree = "<group>"; };
+		006154A427942B42004E36BD /* FirebaseFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFriend.swift; sourceTree = "<group>"; };
+		00741A07279333FA009861DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		00741A0E27934819009861DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0081EBAD274C276000712125 /* NewsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFooterView.swift; sourceTree = "<group>"; };
 		0081EBAF274C27EF00712125 /* NewsFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFooterView.xib; sourceTree = "<group>"; };
 		0081EBB12750107C00712125 /* NewsHeaderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsHeaderViewCell.swift; sourceTree = "<group>"; };
@@ -87,6 +100,11 @@
 		0081EBE22759607800712125 /* CustomIneractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomIneractiveTransition.swift; sourceTree = "<group>"; };
 		0081EBE52759711000712125 /* CustomPushTwistAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPushTwistAnimation.swift; sourceTree = "<group>"; };
 		0081EBE92759715200712125 /* CustomTwistNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTwistNavigationController.swift; sourceTree = "<group>"; };
+		008E581127874E0000074464 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		008E5813278770AD00074464 /* GroupsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsTableViewCell.swift; sourceTree = "<group>"; };
+		008E581527888FDD00074464 /* FriendsPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		008E58172788902400074464 /* FriendsPhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPhotosCollectionViewController.swift; sourceTree = "<group>"; };
+		008E5819278E372400074464 /* TestInternetConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInternetConnection.swift; sourceTree = "<group>"; };
 		00973E9A27662AC000E8CD41 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		00ACD98E2741500E007212A5 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		00ACD99027416815007212A5 /* UserFreindArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFreindArray.swift; sourceTree = "<group>"; };
@@ -139,7 +157,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00741A0D2793367B009861DB /* FirebaseDatabase in Frameworks */,
 				00DC91042773D7BB000FAF28 /* RealmSwift in Frameworks */,
+				00741A0B2793367B009861DB /* FirebaseAuth in Frameworks */,
 				00DC90EF276F5194000FAF28 /* SDWebImage in Frameworks */,
 				00DC91092773E328000FAF28 /* SwiftyJSON in Frameworks */,
 				00973E98276624EC00E8CD41 /* Alamofire in Frameworks */,
@@ -178,6 +198,7 @@
 				00C616E3272B38B000E4976D /* Assets.xcassets */,
 				00C616E5272B38B000E4976D /* LaunchScreen.storyboard */,
 				00C616E8272B38B000E4976D /* Info.plist */,
+				00741A07279333FA009861DB /* GoogleService-Info.plist */,
 				00C2DFED27665FD40088783D /* TestViewController.swift */,
 			);
 			path = Resources;
@@ -296,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				00973E9A27662AC000E8CD41 /* AuthViewController.swift */,
+				00741A0E27934819009861DB /* LoginViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -304,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				00DC90EA276E4DC5000FAF28 /* FriendsTableViewController.swift */,
+				008E581127874E0000074464 /* FriendsTableViewCell.swift */,
 				00DC90E7276E41C9000FAF28 /* Models */,
 			);
 			path = Friends;
@@ -358,6 +381,7 @@
 				00DC90E8276E4982000FAF28 /* Friend.swift */,
 				00DC91052773D9C4000FAF28 /* FriendDAO.swift */,
 				00DC910A2773E5CA000FAF28 /* FriendDTO.swift */,
+				006154A427942B42004E36BD /* FirebaseFriend.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -366,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				00DC90F2276F592B000FAF28 /* GroupsTableViewController.swift */,
+				008E5813278770AD00074464 /* GroupsTableViewCell.swift */,
 				00DC90F1276F58EA000FAF28 /* Models */,
 			);
 			path = Groups;
@@ -385,6 +410,8 @@
 			children = (
 				00DC90FA276F825F000FAF28 /* PhotosCollectionViewController.swift */,
 				00DC90FC276F90A4000FAF28 /* PhotosCollectionViewCell.swift */,
+				008E58172788902400074464 /* FriendsPhotosCollectionViewController.swift */,
+				008E581527888FDD00074464 /* FriendsPhotosCollectionViewCell.swift */,
 				00DC90F7276F729B000FAF28 /* Models */,
 			);
 			path = Photos;
@@ -411,6 +438,7 @@
 				00D73A38276BD94300A4EEF3 /* UsersGroupsAPI.swift */,
 				00295419277B6890007EAF75 /* UsersGroupsDB.swift */,
 				00D73A3A276BE6E800A4EEF3 /* GroupsSearchAPI.swift */,
+				008E5819278E372400074464 /* TestInternetConnection.swift */,
 			);
 			path = Servises;
 			sourceTree = "<group>";
@@ -436,6 +464,8 @@
 				00DC90EE276F5194000FAF28 /* SDWebImage */,
 				00DC91032773D7BB000FAF28 /* RealmSwift */,
 				00DC91082773E328000FAF28 /* SwiftyJSON */,
+				00741A0A2793367B009861DB /* FirebaseAuth */,
+				00741A0C2793367B009861DB /* FirebaseDatabase */,
 			);
 			productName = "1l_ШмондрикКонстантин";
 			productReference = 00C616D7272B38AA00E4976D /* VK_ШмондрикКонстантин.app */;
@@ -470,6 +500,7 @@
 				00DC90ED276F5194000FAF28 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				00DC91022773D7BB000FAF28 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				00DC91072773E328000FAF28 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				00741A092793367B009861DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 00C616D8272B38AA00E4976D /* Products */;
 			projectDirPath = "";
@@ -490,6 +521,7 @@
 				00C616E4272B38B000E4976D /* Assets.xcassets in Resources */,
 				00C616E2272B38AA00E4976D /* Main.storyboard in Resources */,
 				0081EBB0274C27EF00712125 /* NewsFooterView.xib in Resources */,
+				00741A08279333FA009861DB /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +534,7 @@
 			files = (
 				00C2DFEE27665FD40088783D /* TestViewController.swift in Sources */,
 				00ACD99127416815007212A5 /* UserFreindArray.swift in Sources */,
+				008E581227874E0000074464 /* FriendsTableViewCell.swift in Sources */,
 				00C616EF272B3C5500E4976D /* LoginFormController.swift in Sources */,
 				00C19E62273582B600C20BBB /* MyFriendsController.swift in Sources */,
 				0029541A277B6890007EAF75 /* UsersGroupsDB.swift in Sources */,
@@ -509,6 +542,7 @@
 				00DC910F2775217D000FAF28 /* AllPhotosDAO.swift in Sources */,
 				00C19E7C273B1B7000C20BBB /* GradientView.swift in Sources */,
 				00973E9B27662AC000E8CD41 /* AuthViewController.swift in Sources */,
+				008E58182788902400074464 /* FriendsPhotosCollectionViewController.swift in Sources */,
 				00DC910D27751C18000FAF28 /* UsersGroupsDAO.swift in Sources */,
 				00C19E5D273569AF00C20BBB /* MyGroupsController.swift in Sources */,
 				0011CC51274933BB007D5467 /* LoadingViewController.swift in Sources */,
@@ -521,10 +555,12 @@
 				0081EBDD27580B1F00712125 /* CustomPushAnimator.swift in Sources */,
 				00C2DFF3276A9DF60088783D /* PhotosAPI.swift in Sources */,
 				00D73A39276BD94300A4EEF3 /* UsersGroupsAPI.swift in Sources */,
+				00741A0F27934819009861DB /* LoginViewController.swift in Sources */,
 				00ACD9972745A177007212A5 /* Dictionaris.swift in Sources */,
 				00DC9101276FB818000FAF28 /* AllPhotos.swift in Sources */,
 				00C616DB272B38AA00E4976D /* AppDelegate.swift in Sources */,
 				0081EBE12758206300712125 /* CustomNavigationController.swift in Sources */,
+				006154A527942B42004E36BD /* FirebaseFriend.swift in Sources */,
 				00C19E64273582CF00C20BBB /* MyFriendsCell.swift in Sources */,
 				00DC90F5276F5984000FAF28 /* UsersGroups.swift in Sources */,
 				0011CC56274A9CD9007D5467 /* MyNewsTableViewCell.swift in Sources */,
@@ -534,11 +570,14 @@
 				00DC90E9276E4982000FAF28 /* Friend.swift in Sources */,
 				00C19E5A27354B6600C20BBB /* AvailableGroupsCell.swift in Sources */,
 				00C616DD272B38AA00E4976D /* SceneDelegate.swift in Sources */,
+				008E581A278E372400074464 /* TestInternetConnection.swift in Sources */,
 				00ACD9952742F25B007212A5 /* GroupsArray.swift in Sources */,
 				00DC90F9276F72CF000FAF28 /* Photos.swift in Sources */,
 				00ACD98F2741500E007212A5 /* Users.swift in Sources */,
 				0081EBB32750107C00712125 /* NewsHeaderViewCell.swift in Sources */,
+				008E581627888FDD00074464 /* FriendsPhotosCollectionViewCell.swift in Sources */,
 				00C19E5F273569EE00C20BBB /* MyGroupCell.swift in Sources */,
+				008E5814278770AD00074464 /* GroupsTableViewCell.swift in Sources */,
 				0081EBEA2759715200712125 /* CustomTwistNavigationController.swift in Sources */,
 				00DC910B2773E5CA000FAF28 /* FriendDTO.swift in Sources */,
 				00DC91062773D9C4000FAF28 /* FriendDAO.swift in Sources */,
@@ -714,7 +753,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "gb.-l-------------------";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gb.VK-KShmondrik";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -742,7 +781,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "gb.-l-------------------";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gb.VK-KShmondrik";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -774,6 +813,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		00741A092793367B009861DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 		00973E96276624EC00E8CD41 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -809,6 +856,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		00741A0A2793367B009861DB /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00741A092793367B009861DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		00741A0C2793367B009861DB /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00741A092793367B009861DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
 		00973E97276624EC00E8CD41 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 00973E96276624EC00E8CD41 /* XCRemoteSwiftPackageReference "Alamofire" */;

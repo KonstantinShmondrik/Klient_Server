@@ -46,7 +46,7 @@ final class FriendsDB {
                 
                 let realm = try! Realm()
                 
-                let friends: Results<FriendDAO> = realm.objects(FriendDAO.self)
+            let friends: Results<FriendDAO> = realm.objects(FriendDAO.self)
                 
                 return friends
            
