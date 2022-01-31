@@ -24,11 +24,13 @@ class TestViewController: UITableViewController {
     private var groupsSearchAPI = GroupsSearchAPI()
     private var groupsSearch: [GroupsSearch] = []
    
+    private var newsFeedAPI = NewsFeedAPI()
+    private var newsFeed: [NewsFeed] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+/*
 // MARK: -  вызов списка друзей
         
         friendsAPI.getFriends { [weak self] friends in
@@ -65,7 +67,24 @@ class TestViewController: UITableViewController {
                
                     self.tableView.reloadData()
                 }
+     */
+        // MARK: - получение списка новостей
         
+       
+        
+        
+        newsFeedAPI.getNewsFeed2 { [weak self] newsFeed in
+            guard let self = self else {return}
+            self.newsFeed = newsFeed
+            self.tableView.reloadData()
+        }
+    
+        
+        newsFeedAPI.getNewsFeed { [weak self] newsFeed in
+            guard let self = self else {return}
+            self.newsFeed = newsFeed
+            self.tableView.reloadData()
+        }
     }
 
     
