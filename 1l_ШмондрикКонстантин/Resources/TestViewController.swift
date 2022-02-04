@@ -24,8 +24,10 @@ class TestViewController: UITableViewController {
     private var groupsSearchAPI = GroupsSearchAPI()
     private var groupsSearch: [GroupsSearch] = []
    
-    private var newsFeedAPI = NewsFeedAPI()
-    private var newsFeed: [NewsFeed] = []
+//    private var newsFeedAPI = NewsFeedAPI()
+//    private var newsFeed: [NewsFeed]? = []
+//    private var newsItemsFeed: [NewsFeed] = []
+    
     
     
     override func viewDidLoad() {
@@ -70,24 +72,29 @@ class TestViewController: UITableViewController {
      */
         // MARK: - получение списка новостей
         
-       
-        
-        
-        newsFeedAPI.getNewsFeed2 { [weak self] newsFeed in
-            guard let self = self else {return}
-            self.newsFeed = newsFeed
-            self.tableView.reloadData()
-        }
     
         
-        newsFeedAPI.getNewsFeed { [weak self] newsFeed in
-            guard let self = self else {return}
-            self.newsFeed = newsFeed
-            self.tableView.reloadData()
-        }
-    }
-
+//        newsFeedAPI.getNewsFeed { [weak self] newsFeed in
+//            guard let self = self else {return}
+//            self.newsFeed = newsFeed
+//            self.tableView.reloadData()
+//        }
+//    }
+//
+//    newsFeedAPI.getNewsFeed {[weak self] newsFeed in
+//       
+//        guard let self = self else {return}
+//        self.newsFeed = newsFeed
+////        self.newsFeed = newsFeed?.response.items as! [NewsFeed]
+////        self.newsFeed = newsFeed?.response.groups as! [NewsFeed]
+////        self.newsFeed = newsFeed?.response.profiles as! [NewsFeed]
+//        
+//        self.tableView.reloadData()
+//    
+//    }
+//    
     
+}
     
-    
+  
 }

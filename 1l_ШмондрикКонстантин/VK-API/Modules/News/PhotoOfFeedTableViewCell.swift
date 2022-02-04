@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PhotoOfFeedTableViewCell: UITableViewCell {
     @IBOutlet weak var photoOfFeed: UIImageView!
@@ -22,6 +23,6 @@ class PhotoOfFeedTableViewCell: UITableViewCell {
     }
     
     func config(photoOfFeed: String){
-        self.photoOfFeed.image = UIImage(named: photoOfFeed)
+        self.photoOfFeed.sd_setImage(with: URL(string:photoOfFeed))
     }
 }

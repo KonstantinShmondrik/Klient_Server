@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 
 enum PostCellTipe: Int, CaseIterable {
@@ -17,44 +18,45 @@ enum PostCellTipe: Int, CaseIterable {
 
 class NewsFeedTableViewController: UITableViewController {
     
-    //данные заглушка потом будут руальные данные
-    private var news = [
-        NewsFeedPlug(newsText: "Случайно убила жениха благодаря демону по имени Люцик, который напоил меня",
-                     newsPhoto: "01",
-                     user: Users(name: "Тиабини", logo: "Tiabiny"),dateOfPublication: "01.01.2022"),
-        NewsFeedPlug(newsText: "hhhhhhhhhhh",
-                     newsPhoto: "02",
-                     user: Users(name: "Люцик", logo: "Lucy"), dateOfPublication: "02.02.2022"),
-        NewsFeedPlug(newsText: nil,
-                     newsPhoto: "03",
-                     user: Users(name: "Люцик", logo: "Lucy"), dateOfPublication: "02.02.2022"),
-        NewsFeedPlug(newsText: "Hello",
-                     newsPhoto: nil,
-                     user: Users(name: "Уна", logo: "Una"), dateOfPublication: "02.02.2022")
-    ]
+//    //данные заглушка потом будут руальные данные
+//    private var news = [
+//        NewsFeedPlug(newsText: "Случайно убила жениха благодаря демону по имени Люцик, который напоил меня",
+//                     newsPhoto: "01",
+//                     user: Users(name: "Тиабини", logo: "Tiabiny"),dateOfPublication: "01.01.2022"),
+//        NewsFeedPlug(newsText: "hhhhhhhhhhh",
+//                     newsPhoto: "02",
+//                     user: Users(name: "Люцик", logo: "Lucy"), dateOfPublication: "02.02.2022"),
+//        NewsFeedPlug(newsText: nil,
+//                     newsPhoto: "03",
+//                     user: Users(name: "Люцик", logo: "Lucy"), dateOfPublication: "02.02.2022"),
+//        NewsFeedPlug(newsText: "Hello",
+//                     newsPhoto: nil,
+//                     user: Users(name: "Уна", logo: "Una"), dateOfPublication: "02.02.2022")
+//    ]
     
     private var newsFeedAPI = NewsFeedAPI()
-    private var newsFeed: [NewsFeed] = []
-    
+
+    private var newsFeed = NewsFeed(response:  .init(items: [], groups: [], profiles: []))
+//    private var newsFeed = NewsFeed()
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        newsFeedAPI.getNewsFeed2 { [weak self] newsFeed in
+        newsFeedAPI.getNewsFeed {[weak self] newsFeed in
+           
             guard let self = self else {return}
-            self.newsFeed = newsFeed
-            self.tableView.reloadData()
+            self.newsFeed = newsFeed! // как сделать безопасным, что вывести в defoult?
+    //        self.newsFeed = newsFeed?.response.items as! [NewsFeed]
+    //        self.newsFeed = newsFeed?.response.groups as! [NewsFeed]
+    //        self.newsFeed = newsFeed?.response.profiles as! [NewsFeed]
+            
+//            self.tableView.reloadData()
+//            print(newsFeed)
         }
         
-        
-        newsFeedAPI.getNewsFeed { [weak self] newsFeed in
-            guard let self = self else {return}
-            self.newsFeed = newsFeed
-            self.tableView.reloadData()
-        }
-        
-        
+    
+
         
         
         tableView.reloadData()
@@ -63,7 +65,7 @@ class NewsFeedTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return news.count
+        return newsFeed.response.items.count// не уверен, что это именно то количество
         
     }
     
@@ -73,27 +75,32 @@ class NewsFeedTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let item = news[indexPath.section]
+       
+        let item = newsFeed.response.items[indexPath.section]
+        let profile = newsFeed.response.profiles[indexPath.section]
+        let group = newsFeed.response.groups[indexPath.section]
         let postCellTipe = PostCellTipe(rawValue: indexPath.row)
         
         switch postCellTipe {
+       
         case .autor:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AutorOfFeedCell", for: indexPath) as?  AutorOfFeedTableViewCell else {return UITableViewCell()}
-            cell.config(authorName: item.user.name, autorPhoto: item.user.logo, dateOfPublication: item.dateOfPublication)
+            cell.config(authorName: "\(profile.firstName) \(profile.lastName)", autorPhoto: profile.photo100, dateOfPublication: String(item.date))
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
+      
         case .text:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TextOfFeedCell", for: indexPath) as? TextOfFeedTableViewCell else {return UITableViewCell()}
-            cell.config(textOfFeed: item.newsText ?? "")
+            cell.config(textOfFeed: item.text ?? "")
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
-            
+
         case .photo:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoOfFeedCell", for: indexPath) as? PhotoOfFeedTableViewCell else {return UITableViewCell()}
-            cell.config(photoOfFeed: item.newsPhoto ?? "")
+            cell.config(photoOfFeed: item.photos?.items.sizes?.last?.url ?? "") // выдает ошибку: Value of type '[PhotosItem]' has no member 'sizes'
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
+
         case .likeCount:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "LikeCountCell", for: indexPath) as? LikeCountTableViewCell else {return UITableViewCell()}
             cell.config(LikeCount: Int.random(in: 0...100), commentCount: Int.random(in: 0...100), shareCount: Int.random(in: 0...100), viewsCount: Int.random(in: 0...100))

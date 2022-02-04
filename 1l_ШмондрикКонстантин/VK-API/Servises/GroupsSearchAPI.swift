@@ -35,7 +35,7 @@ final class GroupsSearchAPI {
             "q": "q",
             "type": "group",
             "sort": "0",
-            "count": "5",
+            "count": "50",
             "access_token": accessToken,
             "v": version
         ]

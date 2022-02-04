@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class AutorOfFeedTableViewCell: UITableViewCell {
     
@@ -41,7 +42,9 @@ class AutorOfFeedTableViewCell: UITableViewCell {
     
     func config(authorName: String, autorPhoto: String, dateOfPublication: String) {
         self.autorName.text = authorName
-        self.autorPhoto.image = UIImage(named: autorPhoto)
+        self.autorPhoto.sd_setImage(with: URL(string: autorPhoto))
+//        self.autorPhoto.image = UIImage(named: autorPhoto)
         self.dateOfPublication.text = dateOfPublication
+        
     }
 }
