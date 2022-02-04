@@ -7,29 +7,29 @@
 
 import Foundation
 
-struct NewsFeed  {
-    //    let canDoubtCategory, isArchived: Bool?
-    //    let postID: Int
-    //    let likes: PurpleLikes?
-    //    let isFavorite: Bool?
-    //    let views: Views?
-    //    let canSetCategory: Bool?
-    //    let sourceID: Int
-    //    let type: String
-    let date: String
-    //    let shortTextRate: Double?
-    //    let canEdit: Int?
-    //    let canArchive: Bool?
-    //    let attachments: [Attachment]?
-    //    let postSource: PostSource?
-    //    let postType: String?
-    //    let reposts: FluffyReposts?
-    let text: String?
-    //    let comments: Comments?
-    //    let donut: Donut?
-    let canDelete: Int?
-    //    let photos: Photos?
-}
+//struct NewsFeed  {
+//    //    let canDoubtCategory, isArchived: Bool?
+//    //    let postID: Int
+//    //    let likes: PurpleLikes?
+//    //    let isFavorite: Bool?
+//    //    let views: Views?
+//    //    let canSetCategory: Bool?
+//    //    let sourceID: Int
+//    //    let type: String
+//    let date: String
+//    //    let shortTextRate: Double?
+//    //    let canEdit: Int?
+//    //    let canArchive: Bool?
+//    //    let attachments: [Attachment]?
+//    //    let postSource: PostSource?
+//    //    let postType: String?
+//    //    let reposts: FluffyReposts?
+//    let text: String?
+//    //    let comments: Comments?
+//    //    let donut: Donut?
+//    let canDelete: Int?
+//    //    let photos: Photos?
+//}
 
 
 
@@ -45,12 +45,12 @@ struct NewsFeedPlug {
 //  let like: Like
 }
 
-struct Comment {
-    let commensCount: Int
-    
-}
-
-struct Like {
-    let LikeCount: Int
-    
-}
+//struct Comment {
+//    let commensCount: Int
+//    
+//}
+//
+//struct Like {
+//    let LikeCount: Int
+//    
+//}
