@@ -26,10 +26,10 @@ struct FriendsResponse: Codable {
 // MARK: - Item
 struct Friend: Codable {
     let canAccessClosed: Bool?
-    let domain: String
+    let domain: String?
     let city: City?
     let id: Int
-    let photo100: String
+    let photo100: String?
     let lastName: String
     let photo50: String
     let trackCode: String?
