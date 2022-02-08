@@ -25,12 +25,12 @@ struct FeedResponse: Codable {
 
 // MARK: - Group
 struct Group: Codable {
-    let isMember, id: Int
-    let photo100: String
-    let isAdvertiser, isAdmin: Int
-    let photo50, photo200: String
-    let type, screenName, name: String
-    let isClosed: Int
+    let isMember, id: Int?
+    let photo100: String?
+    let isAdvertiser, isAdmin: Int?
+    let photo50, photo200: String?
+    let type, screenName, name: String?
+    let isClosed: Int?
 
     enum CodingKeys: String, CodingKey {
         case isMember = "is_member"
@@ -55,12 +55,12 @@ struct Item: Codable {
     let shortTextRate: Double?
     let likes: PurpleLikes?
     let reposts: Reposts?
-    let type: String
+    let type: String?
     let postType: String?
     let date, sourceID: Int
     let text: String?
     let canDoubtCategory: Bool?
-    let attachments: [Attachment]?
+    let attachments: [Attachment?]
     let markedAsAds: Int?
     let postID: Int
     let postSource: PostSource?
@@ -91,20 +91,20 @@ struct Item: Codable {
 
 // MARK: - Attachment
 struct Attachment: Codable {
-    let type: String
+    let type: String?
     let video: Video?
     let photo: Photo?
 }
 
 // MARK: - Photo
 struct Photo: Codable {
-    let albumID, id, date: Int
-    let text: String
-    let userID: Int
-    let sizes: [Size]
-    let hasTags: Bool
-    let ownerID: Int
-    let accessKey: String
+    let albumID, id, date: Int?
+    let text: String?
+    let userID: Int?
+    let sizes: [Size]?
+    let hasTags: Bool?
+    let ownerID: Int?
+    let accessKey: String?
 
     enum CodingKeys: String, CodingKey {
         case albumID = "album_id"
@@ -119,8 +119,8 @@ struct Photo: Codable {
 
 // MARK: - Size
 struct Size: Codable {
-    let width, height: Int
-    let url: String
+    let width, height: Int?
+    let url: String?
     let type: TypeEnum?
     let withPadding: Int?
 
@@ -144,21 +144,21 @@ enum TypeEnum: String, Codable {
 
 // MARK: - Video
 struct Video: Codable {
-    let ownerID: Int
-    let title: String
-    let canAdd, duration: Int
-    let image: [Size]
-    let isFavorite: Bool
-    let views: Int
-    let type: String
-    let canLike, canComment: Int
-    let firstFrame: [Size]
-    let date, id, height: Int
-    let trackCode: String
-    let width, canAddToFaves: Int
-    let accessKey: String
-    let comments, canSubscribe, canRepost: Int
-    let videoDescription: String
+    let ownerID: Int?
+    let title: String?
+    let canAdd, duration: Int?
+    let image: [Size]?
+    let isFavorite: Bool?
+    let views: Int?
+    let type: String?
+    let canLike, canComment: Int?
+    let firstFrame: [Size]?
+    let date, id, height: Int?
+    let trackCode: String?
+    let width, canAddToFaves: Int?
+    let accessKey: String?
+    let comments, canSubscribe, canRepost: Int?
+    let videoDescription: String?
 
     enum CodingKeys: String, CodingKey {
         case ownerID = "owner_id"
@@ -184,7 +184,7 @@ struct Video: Codable {
 
 // MARK: - Comments
 struct CommentsFeed: Codable {
-    let count, canPost: Int
+    let count, canPost: Int?
     let groupsCanPost: Bool?
 
     enum CodingKeys: String, CodingKey {
@@ -196,7 +196,7 @@ struct CommentsFeed: Codable {
 
 // MARK: - Donut
 struct Donut: Codable {
-    let isDonut: Bool
+    let isDonut: Bool?
 
     enum CodingKeys: String, CodingKey {
         case isDonut = "is_donut"
@@ -205,7 +205,7 @@ struct Donut: Codable {
 
 // MARK: - PurpleLikes
 struct PurpleLikes: Codable {
-    let canLike, canPublish, count, userLikes: Int
+    let canLike, canPublish, count, userLikes: Int?
 
     enum CodingKeys: String, CodingKey {
         case canLike = "can_like"
@@ -217,24 +217,24 @@ struct PurpleLikes: Codable {
 
 // MARK: - Photos
 struct PhotosFeed: Codable {
-    let count: Int
+    let count: Int?
     let items: [PhotosItem]
 }
 
 // MARK: - PhotosItem
 struct PhotosItem: Codable {
-    let id: Int
-    let comments: Views
-    let likes: FluffyLikes
-    let accessKey: String
+    let id: Int?
+    let comments: Views?
+    let likes: FluffyLikes?
+    let accessKey: String?
     let userID: Int?
-    let reposts: Reposts
+    let reposts: Reposts?
     let date, ownerID: Int
-    let text: String
+    let text: String?
     let canRepost: Int
-    let sizes: [Size]
-    let hasTags: Bool
-    let albumID, canComment: Int
+    let sizes: [Size]?
+    let hasTags: Bool?
+    let albumID, canComment: Int?
     let postID: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -255,12 +255,12 @@ struct PhotosItem: Codable {
 
 // MARK: - Views
 struct Views: Codable {
-    let count: Int
+    let count: Int?
 }
 
 // MARK: - FluffyLikes
 struct FluffyLikes: Codable {
-    let userLikes, count: Int
+    let userLikes, count: Int?
 
     enum CodingKeys: String, CodingKey {
         case userLikes = "user_likes"
@@ -270,7 +270,7 @@ struct FluffyLikes: Codable {
 
 // MARK: - Reposts
 struct Reposts: Codable {
-    let count, userReposted: Int
+    let count, userReposted: Int?
 
     enum CodingKeys: String, CodingKey {
         case count
@@ -280,21 +280,21 @@ struct Reposts: Codable {
 
 // MARK: - PostSource
 struct PostSource: Codable {
-    let type: String
+    let type: String?
 }
 
 // MARK: - Profile
 struct Profile: Codable {
-    let canAccessClosed: Bool
-    let screenName: String
-    let online, id: Int
-    let photo100: String
-    let lastName: String
-    let photo50: String
-    let onlineInfo: OnlineInfo
-    let sex: Int
-    let isClosed: Bool
-    let firstName: String
+    let canAccessClosed: Bool?
+    let screenName: String?
+    let online, id: Int?
+    let photo100: String?
+    let lastName: String?
+    let photo50: String?
+    let onlineInfo: OnlineInfo?
+    let sex: Int?
+    let isClosed: Bool?
+    let firstName: String?
 
     enum CodingKeys: String, CodingKey {
         case canAccessClosed = "can_access_closed"
@@ -312,7 +312,7 @@ struct Profile: Codable {
 
 // MARK: - OnlineInfo
 struct OnlineInfo: Codable {
-    let visible, isMobile, isOnline: Bool
+    let visible, isMobile, isOnline: Bool?
     let appID, lastSeen: Int?
 
     enum CodingKeys: String, CodingKey {

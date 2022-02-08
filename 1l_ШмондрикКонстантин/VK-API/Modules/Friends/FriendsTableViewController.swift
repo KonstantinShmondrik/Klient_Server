@@ -15,6 +15,7 @@ final class FriendsTableViewController: UITableViewController {
    
     
     private var friendsAPI = FriendsAPI()
+    var friends2: [Friend] = []
     private var friends: Results<FriendDAO>?
     private var friendsDB = FriendsDB()
     private var token: NotificationToken?
@@ -42,14 +43,16 @@ final class FriendsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        guard let friends = friends else { return 0 }
+      /*  guard let friends = friends else { return 0 }
         
         return friends.count
+       */
+        return friends2.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsCell", for: indexPath) as? FriendsTableViewCell else {return UITableViewCell()}
-        
+        /*
         let friend = friends?[indexPath.row]
         cell.namesFriend?.text = "\(friend?.firstName ?? "") \(friend?.lastName ?? "")"
         
@@ -59,7 +62,17 @@ final class FriendsTableViewController: UITableViewController {
                 tableView.reloadRows(at: [indexPath], with: .automatic)
             })
         }
+        */
         
+        let friend = friends2[indexPath.row]
+        cell.namesFriend.text = "\(friend.firstName) \(friend.lastName)"
+        
+        if let url = URL(string: friend.photo50) {
+            
+            cell.friendsLogoImage?.sd_setImage(with: url, completed: { image, _, _, _ in
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            })
+        }
         return cell
     }
     
@@ -67,7 +80,8 @@ final class FriendsTableViewController: UITableViewController {
         if segue.identifier == "toFriendsPhotosCollectionViewController", let cell = (sender as? UITableViewCell) {
             guard let ctrl = segue.destination as? FriendsPhotosCollectionViewController else {return}
             if let indexPath = tableView.indexPath(for: cell) {
-                ctrl.userId = "\(String(describing: friends![indexPath.row].id) )"
+//                ctrl.userId = "\(String(describing: friends![indexPath.row].id) )"
+                ctrl.userId = "\(String(describing: friends2[indexPath.row].id) )"
             }
         }
     }
@@ -91,7 +105,7 @@ final class FriendsTableViewController: UITableViewController {
     func callingFriendsList(){
         if NetworkState().isInternetAvailable {
             print("Internet Connection is ON")
-            friendsAPI.getFriends2 { [weak self] friends in
+          /*  friendsAPI.getFriends2 { [weak self] friends in
                 guard let self = self else {return}
                 self.friendsDB.deleteFriensdData(friends)
                 self.friendsDB.saveFriensdData(friends)
@@ -116,11 +130,12 @@ final class FriendsTableViewController: UITableViewController {
                     }
                 })
             }
-            
+            */
+            friendsViewDidLoadOperations()
             print("данные обновлены")
         } else {
             print("Internet Connection OFF")
-            self.friendsDB.fetchFriensdData() // Обновиться ли так список из базы?
+          /*  self.friendsDB.fetchFriensdData() // Обновиться ли так список из базы?
             friendsAPI.getFriends2 { [weak self] friends in // нужно ли это?
                 guard let self = self else {return}
                 self.friends = self.friendsDB.fetchFriensdData()
@@ -143,7 +158,8 @@ final class FriendsTableViewController: UITableViewController {
                         print("\(error)")
                     }
                 })
-            }
+          }
+           */
             self.alertInternetConnection()
         }
     }
@@ -175,4 +191,21 @@ final class FriendsTableViewController: UITableViewController {
     
     }
    
+// MARK: - Цепочка Operations
+    func friendsViewDidLoadOperations(){
+        
+        let operationsQueue = OperationQueue()
+        
+        let friendsMakeAPIDataOperations = FriendsMakeAPIDataOperations()
+        let friendsParsingOperations = FriendsParsingOperations()
+        let friendsDisplayOperation = FriendsDisplayOperation(controller: self)
+        
+        operationsQueue.addOperation(friendsMakeAPIDataOperations)
+        friendsParsingOperations.addDependency(friendsMakeAPIDataOperations)
+        operationsQueue.addOperation(friendsParsingOperations)
+        friendsDisplayOperation.addDependency(friendsParsingOperations)
+        OperationQueue.main.addOperation(friendsDisplayOperation)
+    }
+    
+    
 }
