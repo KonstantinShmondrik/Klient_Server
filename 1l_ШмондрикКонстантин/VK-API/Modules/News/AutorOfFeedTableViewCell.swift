@@ -40,11 +40,15 @@ class AutorOfFeedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func config(authorName: String, autorPhoto: String, dateOfPublication: String) {
+    func config(authorName: String, autorPhoto: String, dateOfPublication: Double) {
         self.autorName.text = authorName
         self.autorPhoto.sd_setImage(with: URL(string: autorPhoto))
 //        self.autorPhoto.image = UIImage(named: autorPhoto)
-        self.dateOfPublication.text = dateOfPublication
+       let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "dd.MM.yyyy HH.mm"
+        let data = Date(timeIntervalSince1970: dateOfPublication)
+        let stringDate = dateFormater.string(from: data)
+        self.dateOfPublication.text = stringDate
         
     }
 }

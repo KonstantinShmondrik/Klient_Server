@@ -60,7 +60,7 @@ struct Item: Codable {
     let date, sourceID: Int
     let text: String?
     let canDoubtCategory: Bool?
-    let attachments: [Attachment?]
+    let attachments: [Attachment]?
     let markedAsAds: Int?
     let postID: Int
     let postSource: PostSource?
@@ -121,7 +121,7 @@ struct Photo: Codable {
 struct Size: Codable {
     let width, height: Int?
     let url: String?
-    let type: TypeEnum?
+    let type: TypeEnum
     let withPadding: Int?
 
     enum CodingKeys: String, CodingKey {
@@ -218,7 +218,7 @@ struct PurpleLikes: Codable {
 // MARK: - Photos
 struct PhotosFeed: Codable {
     let count: Int?
-    let items: [PhotosItem]
+    let items: [PhotosItem]?
 }
 
 // MARK: - PhotosItem
@@ -229,9 +229,9 @@ struct PhotosItem: Codable {
     let accessKey: String?
     let userID: Int?
     let reposts: Reposts?
-    let date, ownerID: Int
+    let date, ownerID: Int?
     let text: String?
-    let canRepost: Int
+    let canRepost: Int?
     let sizes: [Size]?
     let hasTags: Bool?
     let albumID, canComment: Int?

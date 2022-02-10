@@ -24,7 +24,7 @@ final class UsersGroupsDB {
                 let realm = try Realm()
                 
                 print("ПУТЬ К РЕАЛМУ")
-                print(realm.configuration.fileURL)
+                print(realm.configuration.fileURL ?? "Путь к базе Realme отсутствует")
                 
                 try realm.write{
                     realm.add(groups)
