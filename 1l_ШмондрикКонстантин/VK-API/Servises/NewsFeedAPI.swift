@@ -34,9 +34,9 @@ final class NewsFeedAPI {
             //          "from": "new_from",
             //          "offset": "new_offset", // по умолчанию 0
             //          "start_from": "next_from",
-            "count": "5", // не более 100. По умолчанию 50
+//            "count": "5", // не более 100. По умолчанию 50
             //          "fields": "fields",
-            "section": userId,
+//            "section": userId,
             "access_token": accessToken,
             "v": version
         ]
@@ -76,7 +76,7 @@ final class NewsFeedAPI {
             
             // MARK: - Decoding Profiles
             DispatchQueue.global().async(group: dispatchGroupe){
-                for (index, profiles) in vkItemsJSONArr.enumerated(){
+                for (index, profiles) in vkProfilesJSONArr.enumerated(){
                     do {
                         let decodedItem = try decoder.decode(Profile.self, from: profiles.rawData())
                         vkProfilesArr.append(decodedItem)
@@ -88,7 +88,7 @@ final class NewsFeedAPI {
             
             // MARK: - Decoding Groups
             DispatchQueue.global().async(group: dispatchGroupe){
-                for (index, groups) in vkItemsJSONArr.enumerated(){
+                for (index, groups) in vkGroupsJSONArr.enumerated(){
                     do {
                         let decodedItem = try decoder.decode(Group.self, from: groups.rawData())
                         vkGroupsArr.append(decodedItem)

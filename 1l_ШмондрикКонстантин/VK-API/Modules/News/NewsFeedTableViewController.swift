@@ -12,7 +12,7 @@ import SDWebImage
 enum PostCellTipe: Int, CaseIterable {
     case autor = 0
     case text
-//    case photo
+    case photo
     case likeCount
 }
 
@@ -51,14 +51,14 @@ class NewsFeedTableViewController: UITableViewController {
     //        self.newsFeed = newsFeed?.response.groups as! [NewsFeed]
     //        self.newsFeed = newsFeed?.response.profiles as! [NewsFeed]
             
-//            self.tableView.reloadData()
+            self.tableView.reloadData()
 //            print(newsFeed)
         }
         
     
         
         
-        tableView.reloadData()
+//        tableView.reloadData()
     }
     
     // MARK: - Table view data source
@@ -76,7 +76,7 @@ class NewsFeedTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let item = newsFeed.response.items[indexPath.section]
-        let profile = newsFeed.response.profiles[indexPath.section]
+        let profile = newsFeed.response.profiles[indexPath.section] // ломается при прокрутке вниз
         let group = newsFeed.response.groups[indexPath.section]
         let postCellTipe = PostCellTipe(rawValue: indexPath.row)
         
@@ -84,7 +84,7 @@ class NewsFeedTableViewController: UITableViewController {
        
         case .autor:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AutorOfFeedCell", for: indexPath) as?  AutorOfFeedTableViewCell else {return UITableViewCell()}
-            cell.config(authorName: "\(profile.firstName) \(profile.lastName)", autorPhoto: profile.photo100 ?? "", dateOfPublication: String(item.date))
+            cell.config(authorName: "\(profile.firstName ?? "") \(profile.lastName ?? "")" , autorPhoto: profile.photo100 ?? "", dateOfPublication: Double(item.date))
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
       
@@ -94,11 +94,12 @@ class NewsFeedTableViewController: UITableViewController {
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
 
-//        case .photo:
-//            guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoOfFeedCell", for: indexPath) as? PhotoOfFeedTableViewCell else {return UITableViewCell()}
-//            cell.config(photoOfFeed: item.photos?.items.sizes?.last?.url ?? "") // выдает ошибку: Value of type '[PhotosItem]' has no member 'sizes'
-//            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
-//            return cell
+        case .photo:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoOfFeedCell", for: indexPath) as? PhotoOfFeedTableViewCell else {return UITableViewCell()}
+            cell.config(photoOfFeed: item.attachments?.last?.photo?.sizes?.last?.url ?? "")
+//            cell.config(photoOfFeed: item.photos?.items?.last?.sizes?.last?.url ?? "") // выдает ошибку: Value of type '[PhotosItem]' has no member 'sizes'
+            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+            return cell
 
         case .likeCount:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "LikeCountCell", for: indexPath) as? LikeCountTableViewCell else {return UITableViewCell()}

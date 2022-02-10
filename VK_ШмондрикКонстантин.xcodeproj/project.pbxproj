@@ -45,6 +45,8 @@
 		00A3D46A27B2A47400D1D590 /* FriendsMakeAPIDataOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A3D46927B2A47400D1D590 /* FriendsMakeAPIDataOperations.swift */; };
 		00A3D46C27B2A88A00D1D590 /* FriendsParsingOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A3D46B27B2A88A00D1D590 /* FriendsParsingOperations.swift */; };
 		00A3D46E27B2B26A00D1D590 /* FriendsDisplayOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A3D46D27B2B26A00D1D590 /* FriendsDisplayOperation.swift */; };
+		00A3D47327B57DA300D1D590 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 00A3D47227B57DA300D1D590 /* PromiseKit */; };
+		00A3D47527B57F1B00D1D590 /* UsersGroupsPromiseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A3D47427B57F1B00D1D590 /* UsersGroupsPromiseService.swift */; };
 		00ACD98F2741500E007212A5 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ACD98E2741500E007212A5 /* Users.swift */; };
 		00ACD99127416815007212A5 /* UserFreindArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ACD99027416815007212A5 /* UserFreindArray.swift */; };
 		00ACD9932742F1BF007212A5 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ACD9922742F1BF007212A5 /* Groups.swift */; };
@@ -128,6 +130,7 @@
 		00A3D46927B2A47400D1D590 /* FriendsMakeAPIDataOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsMakeAPIDataOperations.swift; sourceTree = "<group>"; };
 		00A3D46B27B2A88A00D1D590 /* FriendsParsingOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsParsingOperations.swift; sourceTree = "<group>"; };
 		00A3D46D27B2B26A00D1D590 /* FriendsDisplayOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDisplayOperation.swift; sourceTree = "<group>"; };
+		00A3D47427B57F1B00D1D590 /* UsersGroupsPromiseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGroupsPromiseService.swift; sourceTree = "<group>"; };
 		00ACD98E2741500E007212A5 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		00ACD99027416815007212A5 /* UserFreindArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFreindArray.swift; sourceTree = "<group>"; };
 		00ACD9922742F1BF007212A5 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
@@ -184,6 +187,7 @@
 				00741A0B2793367B009861DB /* FirebaseAuth in Frameworks */,
 				00DC90EF276F5194000FAF28 /* SDWebImage in Frameworks */,
 				00DC91092773E328000FAF28 /* SwiftyJSON in Frameworks */,
+				00A3D47327B57DA300D1D590 /* PromiseKit in Frameworks */,
 				00973E98276624EC00E8CD41 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +500,7 @@
 				00D73A3A276BE6E800A4EEF3 /* GroupsSearchAPI.swift */,
 				006154A827A6B142004E36BD /* NewsFeedAPI.swift */,
 				008E5819278E372400074464 /* TestInternetConnection.swift */,
+				00A3D47427B57F1B00D1D590 /* UsersGroupsPromiseService.swift */,
 			);
 			path = Servises;
 			sourceTree = "<group>";
@@ -523,6 +528,7 @@
 				00DC91082773E328000FAF28 /* SwiftyJSON */,
 				00741A0A2793367B009861DB /* FirebaseAuth */,
 				00741A0C2793367B009861DB /* FirebaseDatabase */,
+				00A3D47227B57DA300D1D590 /* PromiseKit */,
 			);
 			productName = "1l_ШмондрикКонстантин";
 			productReference = 00C616D7272B38AA00E4976D /* VK_ШмондрикКонстантин.app */;
@@ -558,6 +564,7 @@
 				00DC91022773D7BB000FAF28 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				00DC91072773E328000FAF28 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				00741A092793367B009861DB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				00A3D47127B57DA300D1D590 /* XCRemoteSwiftPackageReference "PromiseKit" */,
 			);
 			productRefGroup = 00C616D8272B38AA00E4976D /* Products */;
 			projectDirPath = "";
@@ -613,6 +620,7 @@
 				0081EBDA2754025E00712125 /* FriendsPhotoSecondViewController.swift in Sources */,
 				006154AD27A6ED74004E36BD /* AutorOfFeedTableViewCell.swift in Sources */,
 				006154A927A6B142004E36BD /* NewsFeedAPI.swift in Sources */,
+				00A3D47527B57F1B00D1D590 /* UsersGroupsPromiseService.swift in Sources */,
 				0081EBAE274C276000712125 /* NewsFooterView.swift in Sources */,
 				00A3D46E27B2B26A00D1D590 /* FriendsDisplayOperation.swift in Sources */,
 				0081EBDD27580B1F00712125 /* CustomPushAnimator.swift in Sources */,
@@ -897,6 +905,14 @@
 				minimumVersion = 5.4.4;
 			};
 		};
+		00A3D47127B57DA300D1D590 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		00DC90ED276F5194000FAF28 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
@@ -938,6 +954,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 00973E96276624EC00E8CD41 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		00A3D47227B57DA300D1D590 /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00A3D47127B57DA300D1D590 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
 		};
 		00DC90EE276F5194000FAF28 /* SDWebImage */ = {
 			isa = XCSwiftPackageProductDependency;
