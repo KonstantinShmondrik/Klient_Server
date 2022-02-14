@@ -13,6 +13,7 @@ class FriendsPhotosCollectionViewController: UICollectionViewController {
     
     private var allPhotosAPI = AllPhotosAPI()
     private var allPhotos: [AllPhotos] = []
+    var photoService: PhotoService?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,8 +40,11 @@ class FriendsPhotosCollectionViewController: UICollectionViewController {
     
         let photo = allPhotos[indexPath.item]
         guard let photoURL = photo.sizes.last?.url else { return UICollectionViewCell() }
+       
+//        cell.photos.image = photoService?.photo(atIndexpath: indexPath, byUrl: photoURL)
         if let url = URL.init(string: photoURL) {
 
+           
             cell.photos.sd_setImage(with: url)
         }
         return cell
