@@ -35,6 +35,9 @@ struct Friend: Codable {
     let trackCode: String?
     let isClosed: Bool?
     let firstName: String
+    var photo50Url: String {
+        return "\(photo50)"
+    }
 
     enum CodingKeys: String, CodingKey {
         case canAccessClosed = "can_access_closed"

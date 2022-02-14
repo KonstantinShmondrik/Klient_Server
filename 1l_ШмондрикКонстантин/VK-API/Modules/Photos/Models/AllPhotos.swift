@@ -30,6 +30,7 @@ struct AllPhotos: Codable {
     let hasTags: Bool
     let ownerID: Int
     let postID: Int?
+ 
 
     enum CodingKeys: String, CodingKey {
         case albumID = "album_id"

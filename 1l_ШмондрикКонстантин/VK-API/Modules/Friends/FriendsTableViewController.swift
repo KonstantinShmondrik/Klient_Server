@@ -22,7 +22,11 @@ final class FriendsTableViewController: UITableViewController {
     private let authService = Auth.auth()
     private var users = [FirebaseFriend]()
     private let ref = Database.database().reference(withPath: "users")
-    
+    var photoService = PhotoService(container: UITableViewController())
+    let cachesDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first
+  
+    let documentsDirectory = NSHomeDirectory()
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
    
@@ -31,6 +35,8 @@ final class FriendsTableViewController: UITableViewController {
         callingFriendsList()
         
         setUserToFierbase()
+        
+        print("ПУТЬ К КЭШУ \(documentsDirectory)")
   
     }
     
@@ -67,12 +73,17 @@ final class FriendsTableViewController: UITableViewController {
         let friend = friends2[indexPath.row]
         cell.namesFriend.text = "\(friend.firstName) \(friend.lastName)"
         
-        if let url = URL(string: friend.photo50) {
-            
-            cell.friendsLogoImage?.sd_setImage(with: url, completed: { image, _, _, _ in
-                tableView.reloadRows(at: [indexPath], with: .automatic)
-            })
-        }
+        
+        
+        cell.friendsLogoImage.image = photoService.photo(atIndexpath: indexPath, byUrl: friend.photo50Url)
+        
+//        if let url = URL(string: friend.photo50) {
+//
+//            cell.friendsLogoImage?.sd_setImage(with: url, completed: { image, _, _, _ in
+//                tableView.reloadRows(at: [indexPath], with: .automatic)
+//            })
+//        }
+        print("URL ФОТО ДРУЗЕЙ \(URL(string: friend.photo50))")
         return cell
     }
     

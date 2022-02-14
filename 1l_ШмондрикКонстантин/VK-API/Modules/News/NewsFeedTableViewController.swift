@@ -35,7 +35,7 @@ class NewsFeedTableViewController: UITableViewController {
 //    ]
     
     private var newsFeedAPI = NewsFeedAPI()
-    private var newsFeed1: NewsFeed?
+    private var newsFeed1 = [NewsFeed]()
     private var newsFeed = NewsFeed(response:  .init(items: [], groups: [], profiles: []))
 //    private var newsFeed = NewsFeed()
   
