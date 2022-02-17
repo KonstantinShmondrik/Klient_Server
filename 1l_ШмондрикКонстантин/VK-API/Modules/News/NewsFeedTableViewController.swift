@@ -76,7 +76,7 @@ class NewsFeedTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let item = newsFeed.response.items[indexPath.section]
-        let profile = newsFeed.response.profiles[indexPath.section] // ломается при прокрутке вниз
+        let profile = newsFeed.response.profiles[indexPath.section] // ломается при прокрутке вниз Thread 1: Fatal error: Index out of range
         let group = newsFeed.response.groups[indexPath.section]
         let postCellTipe = PostCellTipe(rawValue: indexPath.row)
         
@@ -84,26 +84,42 @@ class NewsFeedTableViewController: UITableViewController {
        
         case .autor:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "AutorOfFeedCell", for: indexPath) as?  AutorOfFeedTableViewCell else {return UITableViewCell()}
-            cell.config(authorName: "\(profile.firstName ?? "") \(profile.lastName ?? "")" , autorPhoto: profile.photo100 ?? "", dateOfPublication: Double(item.date))
+            if item.sourceID > 0 {
+            
+            cell.config(authorName: "\(profile.firstName ?? "") \(profile.lastName ?? "")",
+                        autorPhoto: profile.photo100 ?? "",
+                        dateOfPublication: Double(item.date))
+            } else {
+                cell.config(authorName: "\(group.name ?? ""))",
+                            autorPhoto: group.photo50 ?? "",
+                            dateOfPublication: Double(item.date))
+            }
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
-      
+            
         case .text:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "TextOfFeedCell", for: indexPath) as? TextOfFeedTableViewCell else {return UITableViewCell()}
             cell.config(textOfFeed: item.text ?? "")
-            cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+            cell.separatorInset = UIEdgeInsets(top: 0,
+                                               left: 0,
+                                               bottom: 0,
+                                               right: .greatestFiniteMagnitude)
             return cell
 
         case .photo:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoOfFeedCell", for: indexPath) as? PhotoOfFeedTableViewCell else {return UITableViewCell()}
             cell.config(photoOfFeed: item.attachments?.last?.photo?.sizes?.last?.url ?? "")
+//            item.photos?.items?[0].sizes?.last?.url - может так? но так фото не отображается
 //            cell.config(photoOfFeed: item.photos?.items?.last?.sizes?.last?.url ?? "") // выдает ошибку: Value of type '[PhotosItem]' has no member 'sizes'
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
 
         case .likeCount:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "LikeCountCell", for: indexPath) as? LikeCountTableViewCell else {return UITableViewCell()}
-            cell.config(LikeCount: Int.random(in: 0...100), commentCount: Int.random(in: 0...100), shareCount: Int.random(in: 0...100), viewsCount: Int.random(in: 0...100))
+            cell.config(LikeCount: Int.random(in: 0...100),
+                        commentCount: Int.random(in: 0...100),
+                        shareCount: Int.random(in: 0...100),
+                        viewsCount: Int.random(in: 0...100))
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
             return cell
         default:

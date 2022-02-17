@@ -92,7 +92,7 @@ struct Item: Codable {
 // MARK: - Attachment
 struct Attachment: Codable {
     let type: String?
-    let video: Video?
+//    let video: Video?
     let photo: Photo?
 }
 
@@ -121,7 +121,7 @@ struct Photo: Codable {
 struct Size: Codable {
     let width, height: Int?
     let url: String?
-    let type: TypeEnum
+    let type: TypeEnum?
     let withPadding: Int?
 
     enum CodingKeys: String, CodingKey {

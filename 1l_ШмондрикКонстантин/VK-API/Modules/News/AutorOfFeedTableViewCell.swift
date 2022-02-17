@@ -26,7 +26,11 @@ class AutorOfFeedTableViewCell: UITableViewCell {
     }
     @IBOutlet weak var dateOfPublication: UILabel!
     
-    
+    let dateFormater: DateFormatter = {
+        let df = DateFormatter()
+        df.dateFormat = "dd.MM.yyyy HH.mm"
+        return df
+    }()
     
     
     override func awakeFromNib() {
@@ -44,8 +48,6 @@ class AutorOfFeedTableViewCell: UITableViewCell {
         self.autorName.text = authorName
         self.autorPhoto.sd_setImage(with: URL(string: autorPhoto))
 //        self.autorPhoto.image = UIImage(named: autorPhoto)
-       let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "dd.MM.yyyy HH.mm"
         let data = Date(timeIntervalSince1970: dateOfPublication)
         let stringDate = dateFormater.string(from: data)
         self.dateOfPublication.text = stringDate

@@ -71,8 +71,8 @@ final class FriendsTableViewController: UITableViewController {
         */
         
         let friend = friends2[indexPath.row]
-        cell.namesFriend.text = "\(friend.firstName) \(friend.lastName)"
-        
+//        cell.namesFriend.text = "\(friend.firstName) \(friend.lastName)"
+        cell.setNamesFriend(text: String("\(friend.firstName) \(friend.lastName)"))
         
         
         cell.friendsLogoImage.image = photoService.photo(atIndexpath: indexPath, byUrl: friend.photo50Url)
