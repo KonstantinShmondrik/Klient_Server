@@ -25,7 +25,7 @@ final class NewsFeedAPI {
         
         let method = "/newsfeed.get"
         let parameters: [String : String] = [
-            "filters": "post, photo, photo_tag, wall_photo, friend, note, audio, video",
+            "filters": "post, photo", // , photo_tag, wall_photo, friend, note, audio, video
             //          "return_banned": "0",
             //          "start_time": ,
             //          "end_time": ,
@@ -34,7 +34,7 @@ final class NewsFeedAPI {
             //          "from": "new_from",
             //          "offset": "new_offset", // по умолчанию 0
             //          "start_from": "next_from",
-//            "count": "5", // не более 100. По умолчанию 50
+            "count": "10", // не более 100. По умолчанию 50
             //          "fields": "fields",
 //            "section": userId,
             "access_token": accessToken,
