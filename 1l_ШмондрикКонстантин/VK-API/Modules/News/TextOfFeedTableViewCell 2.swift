@@ -9,6 +9,8 @@ import UIKit
 
 class TextOfFeedTableViewCell: UITableViewCell {
     
+    
+    
     @IBOutlet weak var newsText: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,6 +23,7 @@ class TextOfFeedTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     func config(textOfFeed: String){
+       
         self.newsText.text = textOfFeed
         
     }
@@ -85,5 +88,8 @@ class TextOfFeedTableViewCell: UITableViewCell {
         }
     }
     */
+    
+    
+    
     
 }

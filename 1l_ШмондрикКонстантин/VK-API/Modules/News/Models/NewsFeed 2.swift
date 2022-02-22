@@ -4,6 +4,7 @@
 //   let newsFeedContainer = try? newJSONDecoder().decode(NewsFeedContainer.self, from: jsonData)
 
 import Foundation
+import UIKit
 
 // MARK: - NewsFeedContainer
 struct NewsFeed: Codable {
@@ -15,7 +16,7 @@ struct FeedResponse: Codable {
     let items: [Item]
     let groups: [Group]
     let profiles: [Profile]
-    let nextFrom: String
+    let nextFrom: String?
 
     enum CodingKeys: String, CodingKey {
         case items, groups, profiles
@@ -105,6 +106,7 @@ struct Photo: Codable {
     let hasTags: Bool?
     let ownerID: Int?
     let accessKey: String?
+    
 
     enum CodingKeys: String, CodingKey {
         case albumID = "album_id"
@@ -119,10 +121,15 @@ struct Photo: Codable {
 
 // MARK: - Size
 struct Size: Codable {
-    let width, height: Int?
+    let width: Int
+    let height: Int
     let url: String?
     let type: TypeEnum?
     let withPadding: Int?
+    
+    
+
+    
 
     enum CodingKeys: String, CodingKey {
         case width, height, url, type

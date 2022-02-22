@@ -16,6 +16,8 @@ enum PostCellTipe: Int, CaseIterable {
     case likeCount
 }
 
+
+
 class NewsFeedTableViewController: UITableViewController {
     
     //    //данные заглушка потом будут руальные данные
