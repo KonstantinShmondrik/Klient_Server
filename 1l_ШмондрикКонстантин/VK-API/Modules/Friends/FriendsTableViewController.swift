@@ -93,6 +93,8 @@ final class FriendsTableViewController: UITableViewController {
             if let indexPath = tableView.indexPath(for: cell) {
 //                ctrl.userId = "\(String(describing: friends![indexPath.row].id) )"
                 ctrl.userId = "\(String(describing: friends2[indexPath.row].id) )"
+                ctrl.userName = String("\(friends2[indexPath.row].firstName)  \(friends2[indexPath.row].lastName)")
+                ctrl.userLogo = String("\(friends2[indexPath.row].photo50)")
             }
         }
     }

@@ -98,7 +98,7 @@ class NewsFeedTableViewController: UITableViewController {
         switch postCellTipe {
             
         case .autor:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "AutorOfFeedCell", for: indexPath) as?  AutorOfFeedTableViewCell else {return UITableViewCell()}
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: AutorOfFeedTableViewCell.reuseID, for: indexPath) as?  AutorOfFeedTableViewCell else {return UITableViewCell()}
             
             switch item.sourceID.signum() {
                 
@@ -116,11 +116,14 @@ class NewsFeedTableViewController: UITableViewController {
                 
             default: break
             }
-            
+            cell.separatorInset = UIEdgeInsets(top: 0,
+                                               left: 0,
+                                               bottom: 0,
+                                               right: .greatestFiniteMagnitude)
             return cell
             
         case .text:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "TextOfFeedCell", for: indexPath) as? TextOfFeedTableViewCell else {return UITableViewCell()}
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: TextOfFeedTableViewCell.reuseID, for: indexPath) as? TextOfFeedTableViewCell else {return UITableViewCell()}
             cell.config(textOfFeed: item.text ?? "")
             cell.separatorInset = UIEdgeInsets(top: 0,
                                                left: 0,
@@ -129,7 +132,7 @@ class NewsFeedTableViewController: UITableViewController {
             return cell
             
         case .photo:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoOfFeedCell", for: indexPath) as? PhotoOfFeedTableViewCell else {return UITableViewCell()}
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: PhotoOfFeedTableViewCell.reuseID, for: indexPath) as? PhotoOfFeedTableViewCell else {return UITableViewCell()}
             cell.config(photoOfFeed: item.attachments?.last?.photo?.sizes?.last?.url ?? "")
             cell.separatorInset = UIEdgeInsets(top: 0,
                                                left: 0,
@@ -138,11 +141,12 @@ class NewsFeedTableViewController: UITableViewController {
             return cell
             
         case .likeCount:
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "LikeCountCell", for: indexPath) as? LikeCountTableViewCell else {return UITableViewCell()}
-            cell.config(LikeCount: Int.random(in: 0...100),
-                        commentCount: Int.random(in: 0...100),
-                        shareCount: Int.random(in: 0...100),
-                        viewsCount: Int.random(in: 0...100))
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: LikeCountTableViewCell.reuseID, for: indexPath) as? LikeCountTableViewCell else {return UITableViewCell()}
+            cell.config(LikeCount: item.likes?.count ?? 0,
+                        commentCount: item.comments?.count ?? 0,
+                        shareCount: item.reposts?.count ?? 0,
+                        viewsCount: item.views?.count ?? 0)
+           
             cell.separatorInset = UIEdgeInsets(top: 0,
                                                left: 0,
                                                bottom: 0,

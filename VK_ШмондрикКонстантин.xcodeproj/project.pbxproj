@@ -20,6 +20,8 @@
 		006154B327A72500004E36BD /* TextOfFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006154B227A72500004E36BD /* TextOfFeedTableViewCell.swift */; };
 		006154B527A727F6004E36BD /* PhotoOfFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006154B427A727F6004E36BD /* PhotoOfFeedTableViewCell.swift */; };
 		006154B727A7294E004E36BD /* LikeCountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006154B627A7294E004E36BD /* LikeCountTableViewCell.swift */; };
+		0063240527C5492C00F79622 /* CustomsAnimationServise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063240427C5492C00F79622 /* CustomsAnimationServise.swift */; };
+		0063240B27C6B2F700F79622 /* UsersPhotoCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0063240A27C6B2F700F79622 /* UsersPhotoCollectionReusableView.swift */; };
 		00741A08279333FA009861DB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00741A07279333FA009861DB /* GoogleService-Info.plist */; };
 		00741A0B2793367B009861DB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 00741A0A2793367B009861DB /* FirebaseAuth */; };
 		00741A0D2793367B009861DB /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 00741A0C2793367B009861DB /* FirebaseDatabase */; };
@@ -109,6 +111,8 @@
 		006154B227A72500004E36BD /* TextOfFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOfFeedTableViewCell.swift; sourceTree = "<group>"; };
 		006154B427A727F6004E36BD /* PhotoOfFeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoOfFeedTableViewCell.swift; sourceTree = "<group>"; };
 		006154B627A7294E004E36BD /* LikeCountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCountTableViewCell.swift; sourceTree = "<group>"; };
+		0063240427C5492C00F79622 /* CustomsAnimationServise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomsAnimationServise.swift; sourceTree = "<group>"; };
+		0063240A27C6B2F700F79622 /* UsersPhotoCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPhotoCollectionReusableView.swift; sourceTree = "<group>"; };
 		00741A07279333FA009861DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		00741A0E27934819009861DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0081EBAD274C276000712125 /* NewsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFooterView.swift; sourceTree = "<group>"; };
@@ -474,6 +478,7 @@
 				00DC90FC276F90A4000FAF28 /* PhotosCollectionViewCell.swift */,
 				008E58172788902400074464 /* FriendsPhotosCollectionViewController.swift */,
 				008E581527888FDD00074464 /* FriendsPhotosCollectionViewCell.swift */,
+				0063240A27C6B2F700F79622 /* UsersPhotoCollectionReusableView.swift */,
 				00DC90F7276F729B000FAF28 /* Models */,
 			);
 			path = Photos;
@@ -504,6 +509,7 @@
 				008E5819278E372400074464 /* TestInternetConnection.swift */,
 				00A3D47427B57F1B00D1D590 /* UsersGroupsPromiseService.swift */,
 				00A3D47627BAADDF00D1D590 /* PhotoService.swift */,
+				0063240427C5492C00F79622 /* CustomsAnimationServise.swift */,
 			);
 			path = Servises;
 			sourceTree = "<group>";
@@ -630,6 +636,7 @@
 				00C2DFF3276A9DF60088783D /* PhotosAPI.swift in Sources */,
 				00D73A39276BD94300A4EEF3 /* UsersGroupsAPI.swift in Sources */,
 				00741A0F27934819009861DB /* LoginViewController.swift in Sources */,
+				0063240B27C6B2F700F79622 /* UsersPhotoCollectionReusableView.swift in Sources */,
 				00ACD9972745A177007212A5 /* Dictionaris.swift in Sources */,
 				00DC9101276FB818000FAF28 /* AllPhotos.swift in Sources */,
 				00C616DB272B38AA00E4976D /* AppDelegate.swift in Sources */,
@@ -642,6 +649,7 @@
 				0081EBE32759607800712125 /* CustomIneractiveTransition.swift in Sources */,
 				00C19E692736CC2500C20BBB /* FriendsPhotoCell.swift in Sources */,
 				00ACD9932742F1BF007212A5 /* Groups.swift in Sources */,
+				0063240527C5492C00F79622 /* CustomsAnimationServise.swift in Sources */,
 				00DC90E9276E4982000FAF28 /* Friend.swift in Sources */,
 				00C19E5A27354B6600C20BBB /* AvailableGroupsCell.swift in Sources */,
 				00A3D47727BAADDF00D1D590 /* PhotoService.swift in Sources */,

@@ -530,6 +530,9 @@
                                             <buttonConfiguration key="configuration" style="plain" image="suit.heart" catalog="system" title="Button">
                                                 <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="likeButtonAction:" destination="gqc-KT-Bp9" eventType="touchUpInside" id="Is6-k5-Jm5"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYu-qn-thk">
                                             <rect key="frame" x="109" y="6.3333333333333321" width="91" height="30.999999999999996"/>
@@ -538,6 +541,9 @@
                                             <buttonConfiguration key="configuration" style="plain" image="message" catalog="system" title="Button">
                                                 <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="commentButtonAction:" destination="gqc-KT-Bp9" eventType="touchUpInside" id="pgV-rQ-YBl"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Mu-J7-ik2">
                                             <rect key="frame" x="210" y="6.3333333333333321" width="89.333333333333314" height="30.999999999999996"/>
@@ -546,6 +552,9 @@
                                             <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.right" catalog="system" title="Button">
                                                 <color key="baseForegroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="shareButtonAction:" destination="gqc-KT-Bp9" eventType="touchUpInside" id="BD1-0s-sjs"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vYo-pi-ioU">
                                             <rect key="frame" x="285.66666666666669" y="6.3333333333333321" width="94.333333333333314" height="30.999999999999996"/>
@@ -1189,13 +1198,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3Wq-99-wyG">
                             <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="180"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="PhotosCell" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" reuseIdentifier="PhotosCell" translatesAutoresizingMaskIntoConstraints="NO" id="H4M-AC-V9m" customClass="FriendsPhotosCollectionViewCell" customModule="VK_ШмондрикКонстантин" customModuleProvider="target">
-                                <rect key="frame" x="45" y="0.0" width="300" height="300"/>
+                                <rect key="frame" x="45" y="180" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="iOe-ib-3dm">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
@@ -1220,6 +1229,47 @@
                                 </connections>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="UserHeaderCell" reuseIdentifier="UserHeaderCell" id="CLQ-Ry-7bb" customClass="UsersPhotoCollectionReusableView" customModule="VK_ШмондрикКонстантин" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="390" height="180"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ahI-aO-pBQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="390" height="80"/>
+                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="80" id="4Qo-au-jgz"/>
+                                    </constraints>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vp8-ye-5aM">
+                                    <rect key="frame" x="155" y="40" width="80" height="80"/>
+                                    <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="dQo-UK-N85"/>
+                                        <constraint firstAttribute="height" constant="80" id="e9K-u5-J1z"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Tg-9E-pFn">
+                                    <rect key="frame" x="174" y="131" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="ahI-aO-pBQ" firstAttribute="leading" secondItem="CLQ-Ry-7bb" secondAttribute="leading" id="3PH-d2-SEU"/>
+                                <constraint firstItem="Vp8-ye-5aM" firstAttribute="top" secondItem="CLQ-Ry-7bb" secondAttribute="top" constant="40" id="B0y-Kb-ZHK"/>
+                                <constraint firstAttribute="trailing" secondItem="ahI-aO-pBQ" secondAttribute="trailing" id="Gz5-rQ-eUR"/>
+                                <constraint firstAttribute="bottomMargin" secondItem="1Tg-9E-pFn" secondAttribute="bottom" constant="20" id="JeV-aW-qZV"/>
+                                <constraint firstItem="Vp8-ye-5aM" firstAttribute="centerX" secondItem="CLQ-Ry-7bb" secondAttribute="centerX" id="Tk5-m2-9Fh"/>
+                                <constraint firstItem="1Tg-9E-pFn" firstAttribute="centerX" secondItem="CLQ-Ry-7bb" secondAttribute="centerX" id="ZMf-4u-jrT"/>
+                                <constraint firstItem="ahI-aO-pBQ" firstAttribute="top" secondItem="CLQ-Ry-7bb" secondAttribute="top" id="hWc-2M-RH9"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="avatarLogo" destination="Vp8-ye-5aM" id="CXW-dx-4Yw"/>
+                                <outlet property="backPhoto" destination="ahI-aO-pBQ" id="LW1-F4-AbZ"/>
+                                <outlet property="userName" destination="1Tg-9E-pFn" id="0cr-D0-WXT"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="0OG-JM-c9O" id="OHw-Sn-BZq"/>
                             <outlet property="delegate" destination="0OG-JM-c9O" id="0g7-fv-671"/>

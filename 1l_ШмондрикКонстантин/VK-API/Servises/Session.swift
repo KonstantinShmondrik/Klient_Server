@@ -15,4 +15,5 @@ class Session {
     
     var token = ""                  // токен в VK
     var userId = ""                 // ID пользователя
+    let version = "5.131"           // версия VK API
 }
