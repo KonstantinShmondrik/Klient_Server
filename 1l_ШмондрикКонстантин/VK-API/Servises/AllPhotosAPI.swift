@@ -20,7 +20,7 @@ final class AllPhotosAPI {
     let accessToken = Session.shared.token
     let ownerId = "-" + Session.shared.userId // что это за параметр и как его использовать?
     let userId = Session.shared.userId
-    let version = "5.131"
+    let version = Session.shared.version
    
     // MARK: - DTO
     func getPhotosAll(completion: @escaping([AllPhotos])->()) {

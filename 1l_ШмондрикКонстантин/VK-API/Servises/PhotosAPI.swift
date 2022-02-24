@@ -22,7 +22,7 @@ final class PhotosAPI {
     let albumIdWall = "wall"            
     let albumIdProfile = "profile"
     let albumIdSaved = "saved"
-    let version = "5.131"
+    let version = Session.shared.version
    
     
     func getPhotos(album_id: String, completion: @escaping([Photos])->()) {

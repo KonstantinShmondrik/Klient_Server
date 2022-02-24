@@ -21,7 +21,7 @@ final class GroupsSearchAPI {
     let baseUrl = "https://api.vk.com/method"
     let accessToken = Session.shared.token
     let userId = Session.shared.userId
-    let version = "5.131"
+    let version = Session.shared.version
 //    var q = "поиск группы" // заглушка
    
     

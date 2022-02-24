@@ -10,7 +10,7 @@ import SDWebImage
 
 class PhotoOfFeedTableViewCell: UITableViewCell {
     @IBOutlet weak var photoOfFeed: UIImageView!
-    
+    static let reuseID = "PhotoOfFeedCell"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

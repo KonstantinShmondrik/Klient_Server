@@ -25,7 +25,9 @@ class AutorOfFeedTableViewCell: UITableViewCell {
         }
     }
     @IBOutlet weak var dateOfPublication: UILabel!
-    
+   
+    static let reuseID = "AutorOfFeedCell" //String(describing: AutorOfFeedTableViewCell.self)
+  
     let dateFormater: DateFormatter = {
         let df = DateFormatter()
         df.dateFormat = "dd.MM.yyyy HH.mm"

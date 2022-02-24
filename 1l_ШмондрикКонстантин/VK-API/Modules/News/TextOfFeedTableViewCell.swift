@@ -10,6 +10,7 @@ import UIKit
 class TextOfFeedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var newsText: UILabel!
+    static let reuseID = "TextOfFeedCell"
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
