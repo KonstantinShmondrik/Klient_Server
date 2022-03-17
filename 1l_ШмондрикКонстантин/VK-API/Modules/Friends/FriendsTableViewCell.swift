@@ -25,7 +25,7 @@ class FriendsTableViewCell: UITableViewCell {
         didSet {
             friendsLogoView.translatesAutoresizingMaskIntoConstraints = false
             
-            self.friendsLogoView.layer.borderColor = UIColor.gray.cgColor
+            self.friendsLogoView.layer.borderColor = UIColor.brandGrey.cgColor
             self.friendsLogoView.layer.borderWidth = 0.5
             self.friendsLogoView.clipsToBounds = true
             self.friendsLogoView.layer.cornerRadius = self.friendsLogoView.frame.width / 2

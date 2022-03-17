@@ -18,21 +18,6 @@ enum PostCellTipe: Int, CaseIterable {
 
 class NewsFeedTableViewController: UITableViewController {
     
-    //    //данные заглушка потом будут руальные данные
-    //    private var news = [
-    //        NewsFeedPlug(newsText: "Случайно убила жениха благодаря демону по имени Люцик, который напоил меня",
-    //                     newsPhoto: "01",
-    //                     user: Users(name: "Тиабини", logo: "Tiabiny"),dateOfPublication: "01.01.2022"),
-    //        NewsFeedPlug(newsText: "hhhhhhhhhhh",
-    //                     newsPhoto: "02",
-    //                     user: Users(name: "Люцик", logo: "Lucy"), dateOfPublication: "02.02.2022"),
-    //        NewsFeedPlug(newsText: nil,
-    //                     newsPhoto: "03",
-    //                     user: Users(name: "Люцик", logo: "Lucy"), dateOfPublication: "02.02.2022"),
-    //        NewsFeedPlug(newsText: "Hello",
-    //                     newsPhoto: nil,
-    //                     user: Users(name: "Уна", logo: "Una"), dateOfPublication: "02.02.2022")
-    //    ]
     
     private var newsFeedAPI = NewsFeedAPI()
     private var newsFeed1 = [NewsFeed]()

@@ -12,7 +12,7 @@ class GroupsTableViewCell: UITableViewCell {
    
     @IBOutlet weak var groupsLogoView: UIView!{
         didSet {
-            self.groupsLogoView.layer.borderColor = UIColor.gray.cgColor
+            self.groupsLogoView.layer.borderColor = UIColor.brandGrey.cgColor
             self.groupsLogoView.layer.borderWidth = 0.5
             self.groupsLogoView.clipsToBounds = true
             self.groupsLogoView.layer.cornerRadius = self.groupsLogoView.frame.width / 2

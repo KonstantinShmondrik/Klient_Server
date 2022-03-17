@@ -11,9 +11,9 @@ import SDWebImage
 class AutorOfFeedTableViewCell: UITableViewCell {
     
     @IBOutlet weak var autorName: UILabel!
-    @IBOutlet weak var autorPhoto: UIImageView!{
-        didSet{
-            self.autorPhoto.layer.borderColor = UIColor.gray.cgColor
+    @IBOutlet weak var autorPhoto: UIImageView! {
+        didSet {
+            self.autorPhoto.layer.borderColor = UIColor.brandGrey.cgColor
             self.autorPhoto.layer.borderWidth = 0.5
             self.autorPhoto.clipsToBounds = true
             self.autorPhoto.layer.cornerRadius = self.autorPhoto.frame.width / 2
