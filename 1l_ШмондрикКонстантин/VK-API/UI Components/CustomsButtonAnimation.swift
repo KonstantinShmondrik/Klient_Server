@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CustomsAnimationServise{
+class CustomsButtonAnimation {
     
     func clickButton (button: UIButton) {
         let animation = CASpringAnimation(keyPath: "transform.scale")

@@ -16,57 +16,57 @@ final class UsersGroupsDB {
         
         Realm.Configuration.defaultConfiguration = Realm.Configuration(schemaVersion: 2)
     }
-        // MARK: - saveUsersGroupsData
-        func saveUsersGroupsData (_ groups: [UsersGroupsDAO]) {
+    // MARK: - saveUsersGroupsData
+    func saveUsersGroupsData (_ groups: [UsersGroupsDAO]) {
+        
+        do {
             
-            do {
-                
-                let realm = try Realm()
-                
-                print("ПУТЬ К РЕАЛМУ")
-                print(realm.configuration.fileURL ?? "Путь к базе Realme отсутствует")
-                
-                try realm.write{
-                    realm.add(groups)
-                }
-                
-            } catch {
-                print(error)
+            let realm = try Realm()
+            
+            print("ПУТЬ К РЕАЛМУ")
+            print(realm.configuration.fileURL ?? "Путь к базе Realme отсутствует")
+            
+            try realm.write{
+                realm.add(groups)
             }
+            
+        } catch {
+            print(error)
         }
+    }
+    
+    // MARK: - fetchUsersGroupsData
+    func fetchUsersGroupsData() -> Results<UsersGroupsDAO> {
         
-        // MARK: - fetchUsersGroupsData
-        func fetchUsersGroupsData() -> Results<UsersGroupsDAO> {
-           
-                
-                let realm = try! Realm()
-                
-                let groups: Results<UsersGroupsDAO> = realm.objects(UsersGroupsDAO.self)
-                
-                return groups
-           
-        }
         
-        // MARK: - deleteUsersGroupsData
-        func deleteUsersGroupsData(_ groups: [UsersGroupsDAO]) {
-            do {
-                let realm = try Realm()
-                let oldItems = realm.objects(UsersGroupsDAO.self)
-                try realm.write{
-                    realm.delete(oldItems)
-                }
-                
-                
-            } catch {
-                print(error)
+        let realm = try! Realm()
+        
+        let groups: Results<UsersGroupsDAO> = realm.objects(UsersGroupsDAO.self)
+        
+        return groups
+        
+    }
+    
+    // MARK: - deleteUsersGroupsData
+    func deleteUsersGroupsData(_ groups: [UsersGroupsDAO]) {
+        do {
+            let realm = try Realm()
+            let oldItems = realm.objects(UsersGroupsDAO.self)
+            try realm.write{
+                realm.delete(oldItems)
             }
+            
+            
+        } catch {
+            print(error)
         }
-        
+    }
+    
     // MARK: - deleteAllUsersGroupsData
     func deleteAllUsersGroupsData() {
         do {
             let realm = try Realm()
-
+            
             
             try realm.write{
                 realm.deleteAll()

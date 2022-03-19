@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import SDWebImage
 
 class GroupsTableViewCell: UITableViewCell {
     @IBOutlet weak var groupsName: UILabel!
    
     @IBOutlet weak var groupsLogoView: UIView!{
         didSet {
-            self.groupsLogoView.layer.borderColor = UIColor.gray.cgColor
+            self.groupsLogoView.layer.borderColor = UIColor.brandGrey.cgColor
             self.groupsLogoView.layer.borderWidth = 0.5
             self.groupsLogoView.clipsToBounds = true
             self.groupsLogoView.layer.cornerRadius = self.groupsLogoView.frame.width / 2
@@ -29,13 +30,37 @@ class GroupsTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        
     }
-
+    
+    func configurate(name: String?, photo100: String?, indexPath: IndexPath, tableView: UITableView ) {
+        
+        self.groupsName?.text = "\(name ?? "")"
+        
+        if let url = URL(string: photo100 ?? "") {
+            
+            self.groupsLogoImageView?.sd_setImage(with: url, completed: { image, _, _, _ in
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            })
+        }
+    }
+    
+    func configurate2(with viewModel: GroupsViewModel, indexPath: IndexPath, tableView: UITableView) {
+        
+        self.groupsName?.text = "\(viewModel.groupsName ?? "")"
+        
+        if let url = URL(string: viewModel.groupsLogoView ?? "") {
+            
+            self.groupsLogoImageView?.sd_setImage(with: url, completed: { image, _, _, _ in
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            })
+        }
+    }
+    
 }
