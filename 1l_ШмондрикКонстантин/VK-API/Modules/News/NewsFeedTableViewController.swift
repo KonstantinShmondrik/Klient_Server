@@ -21,7 +21,7 @@ class NewsFeedTableViewController: UITableViewController {
     
     private var newsFeedAPI = NewsFeedAPI()
     private var newsFeed1 = [NewsFeed]()
-    private var newsFeed = NewsFeed(response:  .init(items: [], groups: [], profiles: [], nextFrom: ""))
+    private var newsFeed = NewsFeed(response: .init(items: [], groups: [], profiles: [], nextFrom: ""))
     
     
     var isLoading = false

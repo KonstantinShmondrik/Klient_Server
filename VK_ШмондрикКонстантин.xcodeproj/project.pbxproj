@@ -95,6 +95,9 @@
 		00DC9111277A4753000FAF28 /* FriendsDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DC9110277A4753000FAF28 /* FriendsDB.swift */; };
 		00E3612727629B8E00D30C80 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3612627629B8E00D30C80 /* Session.swift */; };
 		00E3612927629DE900D30C80 /* CustomPopTwistAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3612827629DE900D30C80 /* CustomPopTwistAnimation.swift */; };
+		00F22E5727E4E0FA00167554 /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F22E5627E4E0FA00167554 /* GroupsViewModel.swift */; };
+		00F22E5A27E4E1BE00167554 /* GroupsViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F22E5927E4E1BE00167554 /* GroupsViewModelFactory.swift */; };
+		00F22E5D27E635A600167554 /* UsersGroupsAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F22E5C27E635A600167554 /* UsersGroupsAdapter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -181,6 +184,9 @@
 		00DC9110277A4753000FAF28 /* FriendsDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDB.swift; sourceTree = "<group>"; };
 		00E3612627629B8E00D30C80 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		00E3612827629DE900D30C80 /* CustomPopTwistAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopTwistAnimation.swift; sourceTree = "<group>"; };
+		00F22E5627E4E0FA00167554 /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
+		00F22E5927E4E1BE00167554 /* GroupsViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModelFactory.swift; sourceTree = "<group>"; };
+		00F22E5C27E635A600167554 /* UsersGroupsAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersGroupsAdapter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -467,6 +473,8 @@
 				00DC90F2276F592B000FAF28 /* GroupsTableViewController.swift */,
 				008E5813278770AD00074464 /* GroupsTableViewCell.swift */,
 				00DC90F1276F58EA000FAF28 /* Models */,
+				00F22E5B27E6356500167554 /* Adapter */,
+				00F22E5827E4E18600167554 /* Factory */,
 			);
 			path = Groups;
 			sourceTree = "<group>";
@@ -476,6 +484,7 @@
 			children = (
 				00DC90F4276F5984000FAF28 /* UsersGroups.swift */,
 				00DC910C27751C18000FAF28 /* UsersGroupsDAO.swift */,
+				00F22E5627E4E0FA00167554 /* GroupsViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -520,6 +529,22 @@
 				00A3D47627BAADDF00D1D590 /* PhotoService.swift */,
 			);
 			path = Servises;
+			sourceTree = "<group>";
+		};
+		00F22E5827E4E18600167554 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				00F22E5927E4E1BE00167554 /* GroupsViewModelFactory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		00F22E5B27E6356500167554 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				00F22E5C27E635A600167554 /* UsersGroupsAdapter.swift */,
+			);
+			path = Adapter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -661,6 +686,7 @@
 				0063240527C5492C00F79622 /* CustomsButtonAnimation.swift in Sources */,
 				00DC90E9276E4982000FAF28 /* Friend.swift in Sources */,
 				00C19E5A27354B6600C20BBB /* AvailableGroupsCell.swift in Sources */,
+				00F22E5D27E635A600167554 /* UsersGroupsAdapter.swift in Sources */,
 				00A3D47727BAADDF00D1D590 /* PhotoService.swift in Sources */,
 				00C616DD272B38AA00E4976D /* SceneDelegate.swift in Sources */,
 				008E581A278E372400074464 /* TestInternetConnection.swift in Sources */,
@@ -669,6 +695,8 @@
 				00ACD98F2741500E007212A5 /* Users.swift in Sources */,
 				0081EBB32750107C00712125 /* NewsHeaderViewCell.swift in Sources */,
 				006154B727A7294E004E36BD /* LikeCountTableViewCell.swift in Sources */,
+				00F22E5727E4E0FA00167554 /* GroupsViewModel.swift in Sources */,
+				00F22E5A27E4E1BE00167554 /* GroupsViewModelFactory.swift in Sources */,
 				008E581627888FDD00074464 /* FriendsPhotosCollectionViewCell.swift in Sources */,
 				00C19E5F273569EE00C20BBB /* MyGroupCell.swift in Sources */,
 				008E5814278770AD00074464 /* GroupsTableViewCell.swift in Sources */,

@@ -16,10 +16,18 @@ final class GroupsTableViewController: UITableViewController {
     
     
     private var usersGroupAPI = UsersGroupsAPI()
+    private var usersGroup2: [UsersGroups]? = [] // замена на адаптер
     private var usersGroup: Results<UsersGroupsDAO>?
     private var usersGroupDB = UsersGroupsDB()
     private var token: NotificationToken?
+    
+    private let viewModelFactory = GroupsViewModelFactory()
+    private var viewModels: [GroupsViewModel] = []
+    
     let usersGroupsPromiseService = UsersGroupsPromiseService()
+    let usersGroupsAdapter = UsersGroupsAdapter()
+   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,17 +56,14 @@ final class GroupsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupsCell", for: indexPath) as? GroupsTableViewCell else {return UITableViewCell()}
         
         let group = usersGroup?[indexPath.row]
-        cell.groupsName?.text = "\(group?.name ?? "")"
+              
+//        cell.configurate(name: group?.name, photo100: group?.photo100, indexPath: indexPath, tableView: tableView)
         
-        if let url = URL(string: group?.photo100 ?? "") {
-            
-            cell.groupsLogoImageView?.sd_setImage(with: url, completed: { image, _, _, _ in
-                tableView.reloadRows(at: [indexPath], with: .automatic)
-            })
-        }
+        cell.configurate2(with: GroupsViewModel.init(groupsName: group?.name, groupsLogoView: group?.photo100), indexPath: indexPath, tableView: tableView)
         
         return cell
     }
@@ -76,11 +81,14 @@ final class GroupsTableViewController: UITableViewController {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         firstly{
             usersGroupsPromiseService.getUsersGroups()
+           
+            
         } .get { [weak self] usersGroup in
             guard let self = self else {return}
             self.usersGroupsPromiseService.deleteUsersGroupsData(usersGroup)
             self.usersGroupsPromiseService.saveUsersGroupsData(usersGroup)
             self.usersGroup = self.usersGroupsPromiseService.fetchUsersGroupsData()
+            self.viewModels = self.viewModelFactory.consrtuctViewModels(from: usersGroup)
             self.token = self.usersGroup?.observe(on: .main, { [weak self] changes in
                 
                 guard let self = self else { return }
