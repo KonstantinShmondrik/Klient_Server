@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000A8ACC27FB10E800024D50 /* PhotoAPIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A8ACB27FB10E800024D50 /* PhotoAPIInterface.swift */; };
+		000A8ACE27FB127E00024D50 /* AllPhotosAPIProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A8ACD27FB127E00024D50 /* AllPhotosAPIProxy.swift */; };
 		0011CC51274933BB007D5467 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011CC50274933BB007D5467 /* LoadingViewController.swift */; };
 		0011CC54274A9C91007D5467 /* MyNewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011CC53274A9C91007D5467 /* MyNewsTableViewController.swift */; };
 		0011CC56274A9CD9007D5467 /* MyNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0011CC55274A9CD9007D5467 /* MyNewsTableViewCell.swift */; };
@@ -101,6 +103,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		000A8ACB27FB10E800024D50 /* PhotoAPIInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAPIInterface.swift; sourceTree = "<group>"; };
+		000A8ACD27FB127E00024D50 /* AllPhotosAPIProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPhotosAPIProxy.swift; sourceTree = "<group>"; };
 		0011CC50274933BB007D5467 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		0011CC53274A9C91007D5467 /* MyNewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNewsTableViewController.swift; sourceTree = "<group>"; };
 		0011CC55274A9CD9007D5467 /* MyNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -116,7 +120,7 @@
 		006154B627A7294E004E36BD /* LikeCountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeCountTableViewCell.swift; sourceTree = "<group>"; };
 		0063240427C5492C00F79622 /* CustomsButtonAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomsButtonAnimation.swift; sourceTree = "<group>"; };
 		0063240A27C6B2F700F79622 /* UsersPhotoCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersPhotoCollectionReusableView.swift; sourceTree = "<group>"; };
-		00741A07279333FA009861DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		00741A07279333FA009861DB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		00741A0E27934819009861DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0081EBAD274C276000712125 /* NewsFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsFooterView.swift; sourceTree = "<group>"; };
 		0081EBAF274C27EF00712125 /* NewsFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsFooterView.xib; sourceTree = "<group>"; };
@@ -207,6 +211,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		000A8ACA27FB108500024D50 /* Proxy */ = {
+			isa = PBXGroup;
+			children = (
+				000A8ACB27FB10E800024D50 /* PhotoAPIInterface.swift */,
+				000A8ACD27FB127E00024D50 /* AllPhotosAPIProxy.swift */,
+			);
+			path = Proxy;
+			sourceTree = "<group>";
+		};
 		0011CC52274A9C19007D5467 /* MyNews */ = {
 			isa = PBXGroup;
 			children = (
@@ -497,6 +510,7 @@
 				008E58172788902400074464 /* FriendsPhotosCollectionViewController.swift */,
 				008E581527888FDD00074464 /* FriendsPhotosCollectionViewCell.swift */,
 				0063240A27C6B2F700F79622 /* UsersPhotoCollectionReusableView.swift */,
+				000A8ACA27FB108500024D50 /* Proxy */,
 				00DC90F7276F729B000FAF28 /* Models */,
 			);
 			path = Photos;
@@ -674,6 +688,7 @@
 				00ACD9972745A177007212A5 /* Dictionaris.swift in Sources */,
 				00DC9101276FB818000FAF28 /* AllPhotos.swift in Sources */,
 				00C616DB272B38AA00E4976D /* AppDelegate.swift in Sources */,
+				000A8ACE27FB127E00024D50 /* AllPhotosAPIProxy.swift in Sources */,
 				0081EBE12758206300712125 /* CustomNavigationController.swift in Sources */,
 				006154A527942B42004E36BD /* FirebaseFriend.swift in Sources */,
 				006154AB27A6E87F004E36BD /* NewsFeedTableViewController.swift in Sources */,
@@ -694,6 +709,7 @@
 				00DC90F9276F72CF000FAF28 /* Photos.swift in Sources */,
 				00ACD98F2741500E007212A5 /* Users.swift in Sources */,
 				0081EBB32750107C00712125 /* NewsHeaderViewCell.swift in Sources */,
+				000A8ACC27FB10E800024D50 /* PhotoAPIInterface.swift in Sources */,
 				006154B727A7294E004E36BD /* LikeCountTableViewCell.swift in Sources */,
 				00F22E5727E4E0FA00167554 /* GroupsViewModel.swift in Sources */,
 				00F22E5A27E4E1BE00167554 /* GroupsViewModelFactory.swift in Sources */,

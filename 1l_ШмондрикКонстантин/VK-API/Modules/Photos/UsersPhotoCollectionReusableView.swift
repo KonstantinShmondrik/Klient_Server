@@ -13,7 +13,7 @@ class UsersPhotoCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var avatarLogo: UIImageView!{
         didSet{
             self.avatarLogo.layer.borderColor = UIColor.brandWhite.cgColor
-            self.avatarLogo.layer.borderWidth = 0.8
+            self.avatarLogo.layer.borderWidth = 2.0
             self.avatarLogo.clipsToBounds = true
             self.avatarLogo.layer.cornerRadius = self.avatarLogo.frame.width / 2
             
