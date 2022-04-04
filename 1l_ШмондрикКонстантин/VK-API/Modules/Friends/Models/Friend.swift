@@ -29,7 +29,8 @@ struct Friend: Codable {
     let domain: String?
     let city: City?
     let id: Int
-    let photo100: String?
+    let photo100: String
+    let photo200: String
     let lastName: String
     let photo50: String
     let trackCode: String?
@@ -43,6 +44,7 @@ struct Friend: Codable {
         case canAccessClosed = "can_access_closed"
         case domain, city, id
         case photo100 = "photo_100"
+        case photo200 = "photo_200"
         case lastName = "last_name"
         case photo50 = "photo_50"
         case trackCode = "track_code"

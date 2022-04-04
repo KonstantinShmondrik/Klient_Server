@@ -22,9 +22,9 @@ class FriendsMakeAPIDataOperations: Operation {
 //            URLQueryItem(name: "order", value: "name"),
             URLQueryItem(name: "firstName", value: "first_name"),
             URLQueryItem(name: "lastName", value: "last_name"),
-            URLQueryItem(name: "fields", value: "photo_50"),
+            URLQueryItem(name: "fields", value: "photo_200, photo_100, photo_50, domain, city"),
             URLQueryItem(name: "access_token", value: "\(Session.shared.token)"),
-            URLQueryItem(name: "v", value: "5.131")
+            URLQueryItem(name: "v", value: "\(Session.shared.version)")
         ]
         guard let url = requestConstruktor.url else {return}
         guard let data = try? Data(contentsOf: url) else {return}

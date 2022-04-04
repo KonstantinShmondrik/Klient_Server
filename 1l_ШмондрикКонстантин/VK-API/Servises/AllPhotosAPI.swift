@@ -14,7 +14,7 @@ import RealmSwift
 import SwiftyJSON
 
 
-final class AllPhotosAPI {
+final class AllPhotosAPI: PhotoAPIInterface {
     
     let baseUrl = "https://api.vk.com/method"
     let accessToken = Session.shared.token

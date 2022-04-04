@@ -27,7 +27,7 @@ final class FriendsAPI {
             "user_id": userId,
             "order": "name",
             "count": "1000",
-            "fields": "photo_100, photo_50, city, domain",
+            "fields": "photo_200, photo_100, photo_50, city, domain",
             "access_token": accessToken,
             "v": version
         ]
@@ -60,7 +60,7 @@ final class FriendsAPI {
             "user_id": userId,
             "order": "name",
             "count": "1000",
-            "fields": "photo_100, photo_50, domain, city",
+            "fields": "photo_200, photo_100, photo_50, domain, city",
             "access_token": accessToken,
             "v": version
         ]
@@ -91,7 +91,7 @@ final class FriendsAPI {
             "user_id": userId,
             "order": "name",
             "count": "1000",
-            "fields": "photo_100, photo_50, city, domain",
+            "fields": "photo_200, photo_100, photo_50, city, domain",
             "access_token": accessToken,
             "v": version
         ]

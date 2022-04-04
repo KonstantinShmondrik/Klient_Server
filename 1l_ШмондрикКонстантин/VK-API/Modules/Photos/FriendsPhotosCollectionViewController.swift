@@ -16,17 +16,22 @@ class FriendsPhotosCollectionViewController: UICollectionViewController {
     private var allPhotosAPI = AllPhotosAPI()
     private var allPhotos: [AllPhotos] = []
     var photoService: PhotoService?
+    lazy var allPhotosAPIProxy = AllPhotosAPIProxy(allPhotosAPI: allPhotosAPI)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-      
-        allPhotosAPI.getPhotosAll2(userId: userId) { [weak self] allPhotos in
+//        allPhotosAPI.getPhotosAll2(userId: userId) { [weak self] allPhotos in
+//            guard let self = self else {return}
+//            self.allPhotos = allPhotos
+//            self.collectionView.reloadData()
+//        }
+       
+        allPhotosAPIProxy.getPhotosAll2(userId: userId) { [weak self] allPhotos in
             guard let self = self else {return}
             self.allPhotos = allPhotos
             self.collectionView.reloadData()
-        }
-       
+                                        }
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
